@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Aguja y el Tornillo · Ferretería y mercería en Lavapiés</title>
+    <title>Floristería Petunia</title>
 
     <!-- Tipografías -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,13 +39,16 @@
 </head>
 <body class="bg-fondo font-texto text-texto antialiased transition-colors duration-500">
 
-    <!-- ================= CABECERA ================= -->
-    <header class="sticky top-0 z-20 border-b border-borde bg-fondo/95 backdrop-blur">
-        <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-4">
-            <a href="#inicio" class="font-rotulo text-xl leading-tight font-bold md:text-2xl">
-                La Aguja <span class="text-acento">&amp;</span><br class="md:hidden"> el Tornillo
-            </a>
 
+
+    
+    <!-- ================= CABECERA ================= -->
+    <header class="sticky inset-x-0 top-4 z-20 px-4 md:top-8 backdrop-blur">
+        <div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 rounded-3xl bg-burdeos/75 px-5 py-3 text-crema backdrop-blur-md md:flex-row md:rounded-full md:px-8">
+            <a href="#inicio" class="font-rotulo text-xl leading-tight font-bold md:text-2xl">
+                Floristería
+            </a>
+            <!-- es el modo claro oscuro que hay que cambiar aun -->
             <div class="flex items-center gap-2 md:order-last">
                 <!-- Persona A: este botón cambia entre modo claro y oscuro -->
                 <button id="boton-tema" type="button" aria-pressed="false"
@@ -53,19 +56,19 @@
                     Modo oscuro
                 </button>
 
-                <!-- Persona A: este botón abre y cierra el menú en móvil -->
+                <!-- botón abre y cierra el menú en móvil en responsive -->
                 <button id="boton-menu" type="button" aria-expanded="false" aria-controls="menu"
                         class="rounded-full bg-acento px-3 py-2 text-sm font-semibold text-fondo md:hidden">
                     Menú
                 </button>
             </div>
 
-            <nav class="w-full md:ml-auto md:w-auto" aria-label="Principal">
+            <nav aria-label="Navegación principal">
                 <ul id="menu" class="hidden space-y-1 pb-2 md:flex md:gap-8 md:space-y-0 md:pb-0">
-                    <li><a href="#inicio" class="enlace-menu block py-2">Inicio</a></li>
-                    <li><a href="#productos" class="enlace-menu block py-2">Productos</a></li>
-                    <li><a href="#preguntas" class="enlace-menu block py-2">Preguntas</a></li>
-                    <li><a href="#visitanos" class="enlace-menu block py-2">Visítanos</a></li>
+                    <li><a href="tienda.html" class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Tienda</a></li>
+                    <li><a href="servicios.html" class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Servicios</a></li>
+                    <li><a href="sobre-nosotras.html" class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Sobre nosotras</a></li>
+                    <li><a href="contacto.html" class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -74,7 +77,7 @@
     <main>
         <!-- ================= PORTADA ================= -->
         <section id="inicio" class="mx-auto max-w-6xl px-5 py-20 md:py-28">
-            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-suave">Ferretería y mercería · Lavapiés · Desde 1962</p>
+            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-suave">Floristería · Lavapiés · Desde 1962</p>
             <h1 class="mt-5 max-w-3xl font-rotulo text-5xl leading-tight font-bold md:text-7xl">
 <<<<<<< Updated upstream
                 ESTA ES LA PARFTE DE LAURA Si no lo tenemos, <span class="text-acento italic">se lo pedimos.</span>
