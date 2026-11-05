@@ -20,20 +20,22 @@
 
     <!-- Sistema de diseño -->
     <style type="text/tailwindcss">
-        /* Modo oscuro con la clase .dark en <html> (la pone el JavaScript) */
         @custom-variant dark (&:where(.dark, .dark *));
 
         @theme static {
-            /* Colores del modo claro. Los del modo oscuro están en css/styles.css */
-            --color-fondo: #f4ecdc;
-            --color-superficie: #fffaf0;
-            --color-texto: #2a1a10;
-            --color-suave: #6e5236;
-            --color-acento: #93362a;
-            --color-borde: #d9c7a3;
+            --color-crema: #fef8ec;
+            --color-burdeos: #661e24;
+            --color-rosa: #eba39d;
+
+            --color-fondo: #fef8ec;
+            --color-superficie: #fef8ec;
+            --color-texto: #661e24;
+            --color-suave: #661e24;
+            --color-acento: #661e24;
+            --color-borde: #eba39d;
 
             --font-rotulo: "Imperial Script", cursive;
-            --font-texto: "Montserrat", system-ui, sans-serif;
+            --font-texto: "Montserrat", sans-serif;
         }
     </style>
 </head>
@@ -44,7 +46,7 @@
     
     <!-- ================= CABECERA ================= -->
     <header class="sticky inset-x-0 top-4 z-20 px-4 md:top-8 backdrop-blur">
-        <div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 rounded-3xl bg-burdeos/75 px-5 py-3 text-crema backdrop-blur-md md:flex-row md:rounded-full md:px-8">
+        <div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 rounded-3xl px-5 py-3 text-crema backdrop-blur-md md:flex-row md:rounded-full md:px-8">
             <a href="#inicio" class="font-rotulo text-xl leading-tight font-bold md:text-2xl">
                 Floristería
             </a>
@@ -76,17 +78,18 @@
 
     <main>
         <!-- ================= PORTADA ================= -->
-        <section id="inicio" class="mx-auto max-w-6xl px-5 py-20 md:py-28">
-            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-suave">Floristería · Lavapiés · Desde 1962</p>
-            <h1 class="mt-5 max-w-3xl font-rotulo text-5xl leading-tight font-bold md:text-7xl">
-                Si no lo tenemos, <span class="text-acento italic">se lo pedimos.</span>
-            </h1>
-            <p class="mt-6 max-w-xl text-lg text-suave">
-                Tornillos sueltos, botones de nácar, hilo de todos los colores y consejo de toda la vida. Tres generaciones detrás del mismo mostrador.
-            </p>
-            <a href="#productos" class="mt-10 inline-block rounded-full bg-acento px-8 py-3 font-semibold text-fondo hover:opacity-90">
-                Ver lo más pedido
-            </a>
+        <section id="inicio">
+            <img
+                src="../img/tienda.png"
+                alt="Entrada de la floristería Petunia"
+                width="1672"
+                height="941"
+                class="block h-auto w-full"
+            >
+        </section>
+
+        <section class="bg-burdeos px-5 py-16 text-crema md:py-24">
+            <h1 class="mx-auto max-w-5xl text-center font-rotulo text-5xl leading-tight md:text-7xl">“Donde los momentos florecen”</h1>
         </section>
 
         <!-- ================= PRODUCTOS ================= -->
