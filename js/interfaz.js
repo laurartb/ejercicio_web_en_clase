@@ -25,4 +25,12 @@
 
 */
 
-// Escribe aquí tu código
+const botonMenu = document.getElementById("boton-menu");
+const menu = document.getElementById("menu");
+
+botonMenu.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+
+    const abierto = !menu.classList.contains("hidden");
+    botonMenu.setAttribute("aria-expanded", abierto);
+});
