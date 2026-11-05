@@ -114,14 +114,14 @@
 
                 <!-- Título -->
                 <h2
-                    class="mb-10 text-center font-rotulo text-5xl text-burdeos md:mb-14 md:text-7xl dark:text-granate-oscuro">
+                    class="animar-scroll mb-10 text-center font-rotulo text-5xl text-burdeos md:mb-14 md:text-7xl dark:text-granate-oscuro">
                     Servicios
                 </h2>
 
                 <!-- Tarjetas de servicios -->
 
                 <!-- ========== RAMOS DE NOVIA Y COMPLEMENTOS ========== -->
-                <article class="grid items-center gap-8 md:grid-cols-2 md:gap-12">
+                <article class="animar-scroll grid items-center gap-8 md:grid-cols-2 md:gap-12">
                     <!-- Fotografía -->
                     <div>
                         <img src="img/servicio-novia.png" alt="Centro floral de rosas blancas y flores delicadas"
@@ -148,7 +148,7 @@
                 </article>
 
                 <!-- ========== LA CEREMONIA ========== -->
-                <article class="grid items-center gap-8 md:grid-cols-2 md:gap-12">
+                <article class="animar-scroll grid items-center gap-8 md:grid-cols-2 md:gap-12">
                     <!-- Fotografía -->
                     <div>
                         <img src="img/ceremonia.png" alt="Centro floral de rosas blancas y flores delicadas"
@@ -176,7 +176,7 @@
                 </article>
 
                 <!-- ========== EVENTOS CORPORATIVOS ========== -->
-                <article class="grid items-center gap-8 md:grid-cols-2 md:gap-12">
+                <article class="animar-scroll grid items-center gap-8 md:grid-cols-2 md:gap-12">
                     <!-- Fotografía -->
                     <div>
                         <img src="img/eventos-corporativos.png" alt="Centro floral de rosas blancas y flores delicadas"
@@ -200,7 +200,7 @@
                 </article>
 
                 <!-- ========== DECORACIONES FLORALES ========== -->
-                <article class="grid items-center gap-8 md:grid-cols-2 md:gap-12">
+                <article class="animar-scroll grid items-center gap-8 md:grid-cols-2 md:gap-12">
                     <!-- Fotografía -->
                     <div>
                         <img src="img/decoraciones-florales.png" alt="Centro floral de rosas blancas y flores delicadas"
@@ -233,11 +233,11 @@
                 <!-- Sello de Petunia -->
                 <div class="flex items-center justify-center">
                     <img src="img/sello.png" alt="Sello ilustrado de Floristería Petunia"
-                        class="w-3/5 max-w-xs -rotate-6 object-contain" loading="lazy">
+                        class="animar-scroll w-3/5 max-w-xs -rotate-6 object-contain" loading="lazy">
                 </div>
 
                 <!-- Tarjeta de ubicación -->
-                <div class="rounded-xl bg-burdeos p-5 text-crema md:p-7 dark:bg-granate-oscuro">
+                <div class="animar-scroll rounded-xl bg-burdeos p-5 text-crema md:p-7 dark:bg-granate-oscuro">
                     <h2 class="font-rotulo text-4xl md:text-5xl">
                         ¡Ven a visitarnos!
                     </h2>
@@ -279,11 +279,16 @@
         </nav>
     </footer>
 
-    <!-- ===== JS DE LIBRERÍAS (Persona B los añade aquí, ANTES de nuestro JS) ===== -->
+    <!-- Librería GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
 
-    <!-- ===== NUESTRO JAVASCRIPT ===== -->
+    <!-- Plugin ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Nuestro JavaScript -->
     <script src="js/interfaz.js"></script>
     <script src="js/librerias.js"></script>
+
 </body>
 
 </html>

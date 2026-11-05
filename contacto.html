@@ -102,10 +102,10 @@
 
             <!-- Tarjeta de contacto -->
             <div
-                class="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-10 rounded-2xl border border-white/30 bg-crema/90 p-6 shadow-xl backdrop-blur-md md:grid-cols-2 md:gap-12 md:p-12 dark:border-crema/20 dark:bg-granate-oscuro/90">
+                class="animar-scroll relative z-10 mx-auto grid w-full max-w-6xl items-center gap-10 rounded-2xl border border-white/30 bg-crema/90 p-6 shadow-xl backdrop-blur-md md:grid-cols-2 md:gap-12 md:p-12 dark:border-crema/20 dark:bg-granate-oscuro/90">
 
                 <!-- Texto de presentación -->
-                <div class="text-burdeos dark:text-rosa-terracota">
+                <div class="animar-scroll text-burdeos dark:text-rosa-terracota">
 
                     <h1 class="font-texto text-xl font-normal sm:text-2xl">
                         ¡Cuéntanos tu idea!
@@ -172,13 +172,13 @@
             <div class="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
 
                 <!-- Sello de Petunia -->
-                <div class="flex items-center justify-center">
+                <div class="animar-scroll flex items-center justify-center">
                     <img src="img/sello.png" alt="Sello ilustrado de Floristería Petunia"
                         class="w-3/5 max-w-xs -rotate-6 object-contain" loading="lazy">
                 </div>
 
                 <!-- Tarjeta de ubicación -->
-                <div class="rounded-xl bg-burdeos p-5 text-crema md:p-7 dark:bg-granate-oscuro">
+                <div class="animar-scroll rounded-xl bg-burdeos p-5 text-crema md:p-7 dark:bg-granate-oscuro">
                     <h2 class="font-rotulo text-4xl md:text-5xl">
                         ¡Ven a visitarnos!
                     </h2>
@@ -220,11 +220,16 @@
         </nav>
     </footer>
 
-    <!-- ===== JS DE LIBRERÍAS (Persona B los añade aquí, ANTES de nuestro JS) ===== -->
+    <!-- Librería GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
 
-    <!-- ===== NUESTRO JAVASCRIPT ===== -->
+    <!-- Plugin ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Nuestro JavaScript -->
     <script src="js/interfaz.js"></script>
     <script src="js/librerias.js"></script>
+
 </body>
 
 </html>

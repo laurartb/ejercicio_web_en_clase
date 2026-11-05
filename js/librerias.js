@@ -1,30 +1,74 @@
-/* =========================================================
-   librerias.js · PERSONA B (rama slider-y-animaciones)
-   Inicializar las librerías de JavaScript
-   =========================================================
 
-   Pasos para usar CUALQUIER librería:
-     1. Buscar en su documentación la parte de "Getting started" o "CDN".
-     2. Enlazar su CSS en el <head> (si tiene).
-     3. Enlazar su JS al final del <body>, ANTES de nuestros archivos.
-     4. Preparar el HTML con las clases o atributos que pide.
-     5. Inicializarla aquí, con las opciones que queramos.
+/* ==========================================
+   PETUNIA · GSAP + SCROLLTRIGGER
+   ========================================== */
 
+if (typeof gsap !== "undefined" &&
+  typeof ScrollTrigger !== "undefined") {
 
-   TAREA 1 · AOS (animaciones al hacer scroll)
-   - Docs: https://michalsnik.github.io/aos/
-   - Añadir data-aos="fade-up" a títulos y bloques que quieras animar.
-   - Inicializar con AOS.init({ ... }).
+  gsap.registerPlugin(ScrollTrigger);
 
+  const movimientoReducido = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
 
-   TAREA 2 · Swiper (slider de productos)
-   - Docs: https://swiperjs.com/get-started
-   - Convertir la rejilla de productos en la estructura de Swiper:
-       .swiper > .swiper-wrapper > .swiper-slide
-     más la paginación (.swiper-pagination) y las flechas.
-   - Inicializar con new Swiper('.swiper', { ... }).
-   - Que en móvil se vea 1 producto, en tablet 2 y en escritorio 3 (opción breakpoints).
+  if (!movimientoReducido) {
 
-*/
+    // Animaciones individuales
+    gsap.utils.toArray(".animar-scroll").forEach((elemento) => {
 
-// Escribe aquí tu código
+      gsap.fromTo(elemento,
+        {
+          autoAlpha: 0,
+          y: 35
+        },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: elemento,
+            start: "top 95%",
+            once: true
+          }
+        }
+      );
+
+    });
+
+    // Animaciones de tarjetas
+    document.querySelectorAll(".grupo-animado").forEach((grupo) => {
+
+      const tarjetas = grupo.querySelectorAll(".tarjeta-animada");
+
+      if (tarjetas.length === 0) return;
+
+      gsap.fromTo(tarjetas,
+        {
+          autoAlpha: 0,
+          y: 35
+        },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.9,
+          stagger: 0.15,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: grupo,
+            start: "top 90%",
+            once: true
+          }
+        }
+      );
+
+    });
+
+    // Actualizar posiciones después de cargar las imágenes
+    window.addEventListener("load", () => {
+      ScrollTrigger.refresh();
+    });
+
+  }
+}
