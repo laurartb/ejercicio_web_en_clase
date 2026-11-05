@@ -94,7 +94,7 @@ Puedes visitar la web de Petunia en el siguiente enlace:
 Proyecto académico desarrollado en pareja.
 
 - **Rocío Consuegra**
-- **[Nombre de la segunda integrante]**
+- **Laura Rojo**
 
 **Universidad:** UDIT — Universidad de Diseño, Innovación y Tecnología  
 **Asignatura:** Maquetación Web con Hojas de Estilo  
