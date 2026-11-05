@@ -1,68 +1,86 @@
+
 /* =========================================================
-   La Aguja y el Tornillo · CSS propio
+   PETUNIA · CSS PROPIO
+   Floristería Petunia
    ========================================================= */
 
-/* Mismo orden de capas que Tailwind (siempre en la primera línea) */
+/* Orden de capas compatible con Tailwind CSS v4 */
 @layer theme, base, components, utilities;
 
 
-/* ---------- BASE: etiquetas y tema ---------- */
+/* ================= ESTILOS BASE ================= */
+
 @layer base {
+
     html {
         scroll-behavior: smooth;
-        scroll-padding-top: 5rem; /* para que la cabecera fija no tape los títulos */
+        scroll-padding-top: 5rem;
     }
 
+    /* Colores al seleccionar texto */
     ::selection {
-        background: var(--color-acento);
-        color: var(--color-fondo);
+        background: #EBA39D;
+        color: #661E24;
     }
 
-    /* MODO OSCURO CAMBIANDO EL TEMA ENTERO
-       Cuando el <html> tiene la clase .dark, redefinimos las variables del @theme.
-       Todas las clases que las usan (bg-fondo, text-texto, border-borde...)
-       cambian solas, sin escribir dark: en cada elemento del HTML. */
-    .dark {
-        --color-fondo: #1d140e;
-        --color-superficie: #2a1d14;
-        --color-texto: #f2e8d3;
-        --color-suave: #c9a679;
-        --color-acento: #e0a526;
-        --color-borde: #4a3424;
+    /* Selección de texto en modo oscuro */
+    .dark ::selection {
+        background: #B76862;
+        color: #FEF8EC;
+    }
+
+    /* Apariencia de controles del navegador */
+    html.dark {
         color-scheme: dark;
     }
+
 }
 
 
-/* ---------- COMPONENTS: nuestras clases ---------- */
+/* ================= COMPONENTES ================= */
+
 @layer components {
 
-    /* Etiqueta de número de producto, como las del cajón */
-    .etiqueta {
-        display: inline-block;
-        padding: 0.2rem 0.75rem;
-        border: 1px dashed var(--color-suave);
-        border-radius: 999px;
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 0.2em;
-        color: var(--color-suave);
+    /* ---------- MENÚ CON EFECTO VIDRIO ---------- */
+
+    .menu-vidrio {
+        background: linear-gradient(
+            160deg,
+            rgba(235, 163, 157, 0.38),
+            rgba(102, 30, 36, 0.35)
+        );
+
+        backdrop-filter: blur(24px) saturate(140%);
+        -webkit-backdrop-filter: blur(24px) saturate(140%);
+
+        border: 1px solid rgba(255, 255, 255, 0.35);
+
+        box-shadow:
+            0 8px 30px rgba(40, 12, 15, 0.25),
+            inset 0 1px 1px rgba(255, 255, 255, 0.3);
     }
 
-    /* Tarjeta de producto: sube y gana sombra al pasar el ratón */
-    .producto {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .producto:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 18px 30px -18px rgb(42 26 16 / 0.45);
+
+    /* ---------- MENÚ EN MODO OSCURO ---------- */
+
+    .dark .menu-vidrio {
+        background: linear-gradient(
+            160deg,
+            rgba(183, 104, 98, 0.55),
+            rgba(50, 23, 28, 0.80)
+        );
+
+        border-color: rgba(254, 248, 236, 0.25);
     }
 
-    /* Subrayado de los enlaces del menú que crece desde el centro */
+
+    /* ---------- ENLACES DEL MENÚ ---------- */
+
     .enlace-menu {
         position: relative;
         font-weight: 500;
     }
+
     .enlace-menu::after {
         content: "";
         position: absolute;
@@ -70,55 +88,65 @@
         bottom: 0.2rem;
         width: 0;
         height: 2px;
-        background: var(--color-acento);
-        transition: width 0.3s ease, left 0.3s ease;
+        background: #EBA39D;
+
+        transition:
+            width 0.3s ease,
+            left 0.3s ease;
     }
-    .enlace-menu:hover::after {
+
+    .enlace-menu:hover::after,
+    .enlace-menu:focus-visible::after {
         left: 0;
         width: 100%;
     }
 
-    /* Rombo decorativo delante de los títulos de sección */
-    .titulo-seccion::before {
-        content: "◆";
-        margin-right: 0.6rem;
-        font-size: 0.5em;
-        vertical-align: middle;
-        color: var(--color-acento);
+    .dark .enlace-menu::after {
+        background: #D39E9A;
     }
+
 }
 
+
+/* ================= ANIMACIONES ================= */
+
+/* Animación propia de Petunia para elementos decorativos */
+
+@layer components {
+
+    @keyframes aparecer-suave {
+        from {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animacion-aparecer {
+        animation: aparecer-suave 0.8s ease-out both;
+    }
+
+}
+
+
+/* ================= ACCESIBILIDAD ================= */
 
 @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    .producto, .enlace-menu::after { transition: none; }
-}
 
-/* =========================================================
-   Desde aqui escrito para Petunia
-   ========================================================= */
+    html {
+        scroll-behavior: auto;
+    }
 
-   @layer components {
+    .animacion-aparecer {
+        animation: none;
+    }
 
-    .menu-vidrio {
-        /* Fondo rosado translúcido */
-        background: linear-gradient(
-            160deg,
-            rgba(235, 163, 157, 0.38),
-            rgba(102, 30, 36, 0.35)
-        );
-
-        /* Efecto de cristal esmerilado */
-        backdrop-filter: blur(24px) saturate(140%);
-        -webkit-backdrop-filter: blur(24px) saturate(140%);
-
-        /* Reflejo de luz sobre el vidrio */
-        border: 1px solid rgba(255, 255, 255, 0.35);
-
-        /* Profundidad y brillo */
-        box-shadow:
-            0 8px 30px rgba(40, 12, 15, 0.25),
-            inset 0 1px 1px rgba(255, 255, 255, 0.3);
+    .enlace-menu::after {
+        transition: none;
     }
 
 }
