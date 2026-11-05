@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petunia</title>
+
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- ===== CSS DE LIBRERÍAS (Persona B los añade aquí) ===== -->
+
+    <!-- Nuestro CSS propio -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Tailwind desde el CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Sistema de diseño -->
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+
+        @theme static {
+            --color-crema: #fef8ec;
+            --color-burdeos: #661e24;
+            --color-rosa: #eba39d;
+
+            --color-fondo: #fef8ec;
+            --color-superficie: #fef8ec;
+            --color-texto: #661e24;
+            --color-suave: #661e24;
+            --color-acento: #661e24;
+            --color-borde: #eba39d;
+
+            --color-rosa-oscuro: #D39E9A;
+            --color-granate-oscuro: #32171C;
+            --color-rosa-terracota: #B76862;
+
+            --font-rotulo: "Imperial Script", cursive;
+            --font-texto: "Montserrat", sans-serif;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-fondo font-texto text-texto antialiased transition-colors duration-500 dark:bg-[#32171c] dark:text-crema">
+
+    <!-- ================= CABECERA ================= -->
+    <header class="fixed inset-x-0 top-4 z-50 px-4 md:top-8">
+        <div
+            class="menu-vidrio relative mx-auto flex max-w-5xl flex-row items-center justify-between gap-2 rounded-full px-3 py-2 text-crema md:gap-3 md:px-8 md:py-3">
+            <a href="index.html" class="shrink-0 font-rotulo text-xl leading-none font-bold md:text-2xl">
+                Petunia
+            </a>
+            <!-- es el modo claro oscuro que hay que cambiar aun -->
+            <div class="ml-auto flex shrink-0 items-center gap-2 md:order-last md:ml-0">
+
+                <!-- botón abre y cierra el menú en móvil en responsive -->
+                <button id="boton-menu" type="button" aria-expanded="false" aria-controls="menu"
+                    class="flex h-9 items-center justify-center whitespace-nowrap rounded-full bg-burdeos px-3 text-[11px] font-medium text-crema transition-colors hover:bg-burdeos/80 md:hidden">
+                    Menú
+                </button>
+                <!-- este botón cambia entre modo claro y oscuro -->
+                <button id="boton-tema" type="button" aria-pressed="false"
+                    class="flex h-9 w-[125px] shrink-0  items-center justify-center whitespace-nowrap rounded-full border border-crema/50 px-3 text-[11px] font-medium transition-colors hover:bg-crema/20 md:h-10 md:px-4 md:text-sm">
+                    Modo oscuro
+                </button>
+
+            </div>
+
+            <nav aria-label="Navegación principal"
+                class="absolute inset-x-0 top-full mt-3 md:static md:mt-0 md:bg-transparent">
+                <ul id="menu"
+                    class="hidden flex-col items-center gap-2 rounded-3xl bg-burdeos/95 px-6 py-5 text-center shadow-xl backdrop-blur-xl dark:bg-granate-oscuro/95 md:flex md:flex-row md:gap-8 md:rounded-none md:bg-transparent md:p-0 md:text-left md:shadow-none md:backdrop-blur-none md:dark:bg-transparent">
+                    <li><a href="tienda.html"
+                            class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Tienda</a>
+                    </li>
+                    <li><a href="servicios.html"
+                            class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Servicios</a>
+                    </li>
+                    <li><a href="sobre-nosotras.html"
+                            class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Sobre
+                            nosotras</a></li>
+                    <li><a href="contacto.html"
+                            class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ================= PORTADA IMG FLORISTERIA ================= -->
+        <section id="inicio" class="relative h-dvh">
+            <img src="img/tienda.png" alt="Entrada de la floristería Petunia" width="1672" height="941"
+                class="block h-full w-full object-cover object-center">
+        </section>
+
+        <!-- ================= SERVICIOS ================= -->
+        <section id="servicios"
+            class="relative z-10 -mt-[50dvh] bg-crema px-5 py-16 text-burdeos md:py-20 dark:text-granate-oscuro dark:bg-rosa-oscuro">
+
+            <!-- Degradado de transición con la fotografía -->
+            <div class="pointer-events-none absolute inset-x-0 bottom-full h-40 bg-gradient-to-b from-transparent to-burdeos dark:to-granate-oscuro md:h-52"
+                aria-hidden="true">
+            </div>
+            <div class="mx-auto max-w-6xl space-y-20 md:space-y-20">
+
+                <!-- Título -->
+                <h2
+                    class="mb-10 text-center font-rotulo text-5xl text-burdeos md:mb-14 md:text-7xl dark:text-granate-oscuro">
+                    Servicios
+                </h2>
+
+                <!-- Tarjetas de servicios -->
+
+                <!-- ========== RAMOS DE NOVIA Y COMPLEMENTOS ========== -->
+                <article class="grid items-center gap-8 md:grid-cols-2 md:gap-12">
+                    <!-- Fotografía -->
+                    <div>
+                        <img src="img/servicio-novia.png" alt="Centro floral de rosas blancas y flores delicadas"
+                            class="aspect-[3/2] w-full rounded-xl object-cover" loading="lazy">
+                    </div>
+
+                    <!-- Información -->
+                    <div class="text-burdeos dark:text-granate-oscuro">
+                        <h2 class="font-rotulo text-4xl leading-tight md:text-5xl">
+                            Ramos de novia y complementos
+                        </h2>
+                        <p class="mt-4 max-w-md font-texto text-sm font-light leading-relaxed sm:text-base md:text-lg">
+                            ¿Os casáis o tenéis algo que celebrar?
+                            Creamos ramos de novia, centros de mesa y
+                            decoración floral a vuestra medida.
+                            Contadnos cómo imagináis ese día y os
+                            ayudamos a darle forma con flores.
+                        </p>
+                        <a href="contacto.html"
+                            class="mt-5 inline-block rounded-full bg-burdeos px-5 py-2 text-xs font-medium text-crema transition-colors duration-300 hover:bg-rosa hover:text-burdeos focus-visible:outline-2 focus-visible:outline-offset-4 sm:px-6 sm:py-2.5 sm:text-sm dark:bg-granate-oscuro dark:hover:bg-rosa-terracota dark:hover:text-crema">
+                            Cuéntanos tu idea
+                        </a>
+                    </div>
+                </article>
+
+                <!-- ========== LA CEREMONIA ========== -->
+                <article class="grid items-center gap-8 md:grid-cols-2 md:gap-12">
+                    <!-- Fotografía -->
+                    <div>
+                        <img src="img/ceremonia.png" alt="Centro floral de rosas blancas y flores delicadas"
+                            class="aspect-[3/2] w-full rounded-xl object-cover" loading="lazy">
+                    </div>
+
+                    <!-- Información -->
+                    <div class="text-burdeos dark:text-granate-oscuro">
+                        <h2 class="font-rotulo text-4xl leading-tight md:text-5xl">
+                            La ceremonia
+                        </h2>
+                        <p class="mt-4 max-w-md font-texto text-sm font-light leading-relaxed sm:text-base md:text-lg">
+                            Iglesias, espacios civiles,
+                            jardines o ceremonias al aire libre. Diseñamos las flores para integrarse en el entorno y
+                            crear el ambiente que
+                            habéis imaginado para uno
+                            de los momentos más
+                            importantes del día.
+                        </p>
+                        <a href="contacto.html"
+                            class="mt-5 inline-block rounded-full bg-burdeos px-5 py-2 text-xs font-medium text-crema transition-colors duration-300 hover:bg-rosa hover:text-burdeos focus-visible:outline-2 focus-visible:outline-offset-4 sm:px-6 sm:py-2.5 sm:text-sm dark:bg-granate-oscuro dark:hover:bg-rosa-terracota dark:hover:text-crema">
+                            Cuéntanos tu idea
+                        </a>
+                    </div>
+                </article>
+
+                <!-- ========== EVENTOS CORPORATIVOS ========== -->
+                <article class="grid items-center gap-8 md:grid-cols-2 md:gap-12">
+                    <!-- Fotografía -->
+                    <div>
+                        <img src="img/eventos-corporativos.png" alt="Centro floral de rosas blancas y flores delicadas"
+                            class="aspect-[3/2] w-full rounded-xl object-cover" loading="lazy">
+                    </div>
+
+                    <!-- Información -->
+                    <div class="text-burdeos dark:text-granate-oscuro">
+                        <h2 class="font-rotulo text-4xl leading-tight md:text-5xl">
+                            Eventos corporativos
+                        </h2>
+                        <p class="mt-4 max-w-md font-texto text-sm font-light leading-relaxed sm:text-base md:text-lg">
+                            Diseñamos decoraciones florales para eventos corporativos, cenas privadas, reuniones de
+                            empresa y celebraciones especiales donde cada elemento contribuye a construir una atmósfera.
+                        </p>
+                        <a href="contacto.html"
+                            class="mt-5 inline-block rounded-full bg-burdeos px-5 py-2 text-xs font-medium text-crema transition-colors duration-300 hover:bg-rosa hover:text-burdeos focus-visible:outline-2 focus-visible:outline-offset-4 sm:px-6 sm:py-2.5 sm:text-sm dark:bg-granate-oscuro dark:hover:bg-rosa-terracota dark:hover:text-crema">
+                            Cuéntanos tu idea
+                        </a>
+                    </div>
+                </article>
+
+                <!-- ========== DECORACIONES FLORALES ========== -->
+                <article class="grid items-center gap-8 md:grid-cols-2 md:gap-12">
+                    <!-- Fotografía -->
+                    <div>
+                        <img src="img/decoraciones-florales.png" alt="Centro floral de rosas blancas y flores delicadas"
+                            class="aspect-[3/2] w-full rounded-xl object-cover" loading="lazy">
+                    </div>
+
+                    <!-- Información -->
+                    <div class="text-burdeos dark:text-granate-oscuro">
+                        <h2 class="font-rotulo text-4xl leading-tight md:text-5xl">
+                            Decoraciones florales
+                        </h2>
+                        <p class="mt-4 max-w-md font-texto text-sm font-light leading-relaxed sm:text-base md:text-lg">
+                            Diseñamos decoraciones florales para eventos corporativos, cenas privadas, reuniones de
+                            empresa y celebraciones especiales donde cada elemento contribuye a construir una atmósfera.
+                        </p>
+                        <a href="contacto.html"
+                            class="mt-5 inline-block rounded-full bg-burdeos px-5 py-2 text-xs font-medium text-crema transition-colors duration-300 hover:bg-rosa hover:text-burdeos focus-visible:outline-2 focus-visible:outline-offset-4 sm:px-6 sm:py-2.5 sm:text-sm dark:bg-granate-oscuro dark:hover:bg-rosa-terracota dark:hover:text-crema">
+                            Cuéntanos tu idea
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ================= VISÍTANOS ================= -->
+        <section id="visitanos" class="bg-crema px-5 py-16 md:py-24 dark:bg-rosa-oscuro">
+            <div class="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
+
+                <!-- Sello de Petunia -->
+                <div class="flex items-center justify-center">
+                    <img src="img/sello.png" alt="Sello ilustrado de Floristería Petunia"
+                        class="w-3/5 max-w-xs -rotate-6 object-contain" loading="lazy">
+                </div>
+
+                <!-- Tarjeta de ubicación -->
+                <div class="rounded-xl bg-burdeos p-5 text-crema md:p-7 dark:bg-granate-oscuro">
+                    <h2 class="font-rotulo text-4xl md:text-5xl">
+                        ¡Ven a visitarnos!
+                    </h2>
+                    <p class="mt-4 font-texto text-sm md:text-base">
+                        Calle del Patio, 12 · Madrid
+                    </p>
+                    <p class="mt-2 font-texto text-sm md:text-base">
+                        Lunes a viernes: 10:00–14:00 y 17:00–20:00
+                    </p>
+                    <p class="mt-2 font-texto text-sm md:text-base">
+                        Sábados: 10:00–14:00
+                    </p>
+                    <img src="img/mapa.png" alt="Mapa ilustrativo de la ubicación de Petunia"
+                        class="mt-5 aspect-[4/3] w-full rounded-lg object-cover" loading="lazy">
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-burdeos px-5 py-12 text-crema dark:bg-granate-oscuro">
+        <p class="text-center font-rotulo text-6xl">Petunia</p>
+        <nav aria-label="Navegación del pie de página" class="mt-8">
+            <ul class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm">
+                <li>
+                    <a href="tienda.html" class="hover:text-rosa">Tienda</a>
+                </li>
+                <li>
+                    <a href="servicios.html" class="hover:text-rosa">Servicios</a>
+                </li>
+                <li>
+                    <a href="sobre-nosotras.html" class="hover:text-rosa">Sobre nosotras</a>
+                </li>
+                <li>
+                    <a href="contacto.html" class="hover:text-rosa">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+
+    <!-- ===== JS DE LIBRERÍAS (Persona B los añade aquí, ANTES de nuestro JS) ===== -->
+
+    <!-- ===== NUESTRO JAVASCRIPT ===== -->
+    <script src="js/interfaz.js"></script>
+    <script src="js/librerias.js"></script>
+</body>
+
+</html>
