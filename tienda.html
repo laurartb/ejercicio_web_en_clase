@@ -54,7 +54,7 @@
     <header class="fixed inset-x-0 top-4 z-50 px-4 md:top-8">
         <div
             class="menu-vidrio relative mx-auto flex max-w-5xl flex-row items-center justify-between gap-2 rounded-full px-3 py-2 text-crema md:gap-3 md:px-8 md:py-3">
-            <a href="#inicio" class="shrink-0 font-rotulo text-xl leading-none font-bold md:text-2xl">
+            <a href="index.html" class="shrink-0 font-rotulo text-xl leading-none font-bold md:text-2xl">
                 Petunia
             </a>
             <!-- es el modo claro oscuro que hay que cambiar aun -->
@@ -73,9 +73,10 @@
 
             </div>
 
-            <nav aria-label="Navegación principal" class="absolute inset-x-0 top-full mt-3 md:static md:mt-0">
+            <nav aria-label="Navegación principal"
+                class="absolute inset-x-0 top-full mt-3 md:static md:mt-0 md:bg-transparent">
                 <ul id="menu"
-                    class="hidden flex-col items-center gap-2 rounded-3xl bg-burdeos/95 px-6 py-5 text-center shadow-xl backdrop-blur-xl dark:bg-granate-oscuro/95 dark:text-rosa-terracota md:flex md:flex-row md:gap-8 md:rounded-none md:bg-transparent md:p-0 md:shadow-none md:dark:bg-transparent">
+                    class="hidden flex-col items-center gap-2 rounded-3xl bg-burdeos/95 px-6 py-5 text-center shadow-xl backdrop-blur-xl dark:bg-granate-oscuro/95 dark:text-rosa-terracota md:flex md:flex-row md:gap-8 md:rounded-none md:bg-transparent md:p-0 md:text-left md:shadow-none md:backdrop-blur-none md:dark:bg-transparent">
                     <li><a href="tienda.html"
                             class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Tienda</a>
                     </li>
@@ -95,25 +96,25 @@
 
     <main>
         <!-- ================= PORTADA IMG FLORISTERIA ================= -->
-        <section id="inicio" class="relative h-dvh overflow-hidden">
+        <section id="inicio" class="relative h-dvh">
             <img src="img/tienda.png" alt="Entrada de la floristería Petunia" width="1672" height="941"
                 class="block h-full w-full object-cover object-center">
-
-            <!-- Degradado entre la fotografía y el fondo burdeos -->
-            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-burdeos dark:to-granate-oscuro md:h-64"
-                aria-hidden="true">
-            </div>
         </section>
 
         <!-- ================= RAMOS DE FLORES ================= -->
-        <section id="productos" class="bg-crema px-5 py-16 md:py-24 dark:bg-rosa-oscuro">
+        <section id="productos"
+            class="relative z-10 -mt-[50dvh] bg-burdeos px-5 py-16 text-crema md:py-20 dark:bg-granate-oscuro">
 
+            <!-- Degradado de transición con la fotografía -->
+            <div class="pointer-events-none absolute inset-x-0 bottom-full h-40 bg-gradient-to-b from-transparent to-burdeos dark:to-granate-oscuro md:h-52"
+                aria-hidden="true">
+            </div>
             <div class="mx-auto max-w-6xl">
 
                 <!-- Título -->
                 <h2
-                    class="mb-10 text-center font-rotulo text-5xl text-burdeos md:mb-14 md:text-7xl dark:text-granate-oscuro">
-                    Los favoritos de Petunia
+                    class="mb-10 text-center font-rotulo text-5xl text-rosa md:mb-14 md:text-7xl dark:text-rosa-terracota">
+                    Ramos de flores
                 </h2>
 
                 <!-- Tarjetas de productos -->
@@ -121,7 +122,7 @@
 
                     <!-- Ramo Lucía -->
                     <article
-                        class="group rounded-2xl bg-burdeos p-3 text-crema transition-transform duration-300 hover:-translate-y-1 dark:bg-granate-oscuro">
+                        class="group rounded-2xl bg-rosa p-3 text-crema transition-transform duration-300 hover:-translate-y-1 dark:bg-rosa-terracota">
                         <img src="img/ramo-lucia.png" alt="Ramo Lucía de Petunia"
                             class="aspect-[3/2] w-full rounded-xl object-cover" loading="lazy">
                         <div class="mt-4 flex items-center justify-between gap-3">
@@ -136,7 +137,7 @@
 
                     <!-- Ramo Diana -->
                     <article
-                        class=" group rounded-2xl bg-burdeos p-3 text-crema transition-transform duration-300 hover:-translate-y-1 dark:bg-granate-oscuro">
+                        class=" group rounded-2xl bg-rosa p-3 text-crema transition-transform duration-300 hover:-translate-y-1 dark:bg-rosa-terracota">
                         <img src="img/ramo-diana.png" alt="Ramo Diana de Petunia"
                             class="aspect-[3/2] w-full rounded-xl object-cover" loading="lazy">
                         <div class="mt-4 flex items-center justify-between gap-3">
@@ -151,7 +152,7 @@
 
                     <!-- Ramo Bianca -->
                     <article
-                        class="group rounded-2xl bg-burdeos p-3 text-crema transition-transform duration-300 hover:-translate-y-1 dark:bg-granate-oscuro">
+                        class="group rounded-2xl bg-rosa p-3 text-crema transition-transform duration-300 hover:-translate-y-1 dark:bg-rosa-terracota">
                         <img src="img/ramo-bianca.png" alt="Ramo Bianca de Petunia"
                             class="aspect-[3/2] w-full rounded-xl object-cover" loading="lazy">
                         <div class="mt-4 flex items-center justify-between gap-3">
@@ -166,7 +167,7 @@
 
                     <!-- Ramo Vio -->
                     <article
-                        class="group rounded-2xl bg-burdeos p-3 text-crema transition-transform duration-300 hover:-translate-y-1 dark:bg-granate-oscuro">
+                        class="group rounded-2xl bg-rosa p-3 text-crema transition-transform duration-300 hover:-translate-y-1 dark:bg-rosa-terracota">
                         <img src="img/ramo-vio.png" alt="Ramo Vio de Petunia"
                             class="aspect-[3/2] w-full rounded-xl object-cover" loading="lazy">
 
@@ -179,50 +180,173 @@
                             </p>
                         </div>
                     </article>
-                </div>
+                    <!-- Ramo Laura -->
+                    <article
+                        class="group rounded-2xl bg-rosa p-3 text-crema transition-transform duration-300 hover:-translate-y-1 dark:bg-rosa-terracota">
+                        <img src="img/ramo-laura.png" alt="Ramo Lucía de Petunia"
+                            class="aspect-[3/2] w-full rounded-xl object-cover" loading="lazy">
+                        <div class="mt-4 flex items-center justify-between gap-3">
+                            <h3 class="font-texto text-lg font-light md:text-lg">
+                                Ramo Laura
+                            </h3>
+                            <p class="whitespace-nowrap text-lg md:text-2xl">
+                                40 €
+                            </p>
+                        </div>
+                    </article>
 
-                <!-- Botón -->
-                <div class="mt-10 text-center">
-                    <a href="tienda.html"
-                        class="inline-block rounded-full bg-burdeos px-5 py-2 text-xs font-medium text-crema transition-colors duration-300 hover:bg-rosa hover:text-burdeos focus-visible:outline-2 focus-visible:outline-offset-4 sm:px-6 sm:py-2.5 sm:text-sm dark:bg-granate-oscuro dark:hover:bg-rosa-terracota dark:hover:text-crema">
-                        Ver todos los ramos
-                    </a>
-                </div>
+                    <!-- Ramo Luna -->
+                    <article
+                        class=" group rounded-2xl bg-rosa p-3 text-crema transition-transform duration-300 hover:-translate-y-1 dark:bg-rosa-terracota">
+                        <img src="img/ramo-luna.png" alt="Ramo Luna de Petunia"
+                            class="aspect-[3/2] w-full rounded-xl object-cover" loading="lazy">
+                        <div class="mt-4 flex items-center justify-between gap-3">
+                            <h3 class="font-texto text-lg font-light md:text-lg">
+                                Ramo Luna
+                            </h3>
+                            <p class="whitespace-nowrap text-lg md:text-2xl">
+                                35 €
+                            </p>
+                        </div>
+                    </article>
 
+                    <!-- Ramo Mia -->
+                    <article
+                        class="group rounded-2xl bg-rosa p-3 text-crema transition-transform duration-300 hover:-translate-y-1 dark:bg-rosa-terracota">
+                        <img src="img/ramo-mia.png" alt="Ramo Bianca de Petunia"
+                            class="aspect-[3/2] w-full rounded-xl object-cover" loading="lazy">
+                        <div class="mt-4 flex items-center justify-between gap-3">
+                            <h3 class="font-texto text-lg font-light md:text-lg">
+                                Ramo Mia
+                            </h3>
+                            <p class="whitespace-nowrap text-lg md:text-2xl">
+                                35 €
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Ramo Lia -->
+                    <article
+                        class="group rounded-2xl bg-rosa p-3 text-crema transition-transform duration-300 hover:-translate-y-1 dark:bg-rosa-terracota">
+                        <img src="img/ramo-lia.png" alt="Ramo Lia de Petunia"
+                            class="aspect-[3/2] w-full rounded-xl object-cover" loading="lazy">
+
+                        <div class="mt-4 flex items-center justify-between gap-3">
+                            <h3 class="font-texto text-lg font-light md:text-lg">
+                                Ramo Lia
+                            </h3>
+                            <p class="whitespace-nowrap text-lg md:text-2xl">
+                                30 €
+                            </p>
+                        </div>
+                    </article>
+                    <!-- Ramo Rocío -->
+                    <article
+                        class="group rounded-2xl bg-rosa p-3 text-crema transition-transform duration-300 hover:-translate-y-1 dark:bg-rosa-terracota">
+                        <img src="img/ramo-rocio.png" alt="Ramo Rocío de Petunia"
+                            class="aspect-[3/2] w-full rounded-xl object-cover" loading="lazy">
+                        <div class="mt-4 flex items-center justify-between gap-3">
+                            <h3 class="font-texto text-lg font-light md:text-lg">
+                                Ramo Rocío
+                            </h3>
+                            <p class="whitespace-nowrap text-lg md:text-2xl">
+                                40 €
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Ramo Olivia -->
+                    <article
+                        class=" group rounded-2xl bg-rosa p-3 text-crema transition-transform duration-300 hover:-translate-y-1 dark:bg-rosa-terracota">
+                        <img src="img/ramo-olivia.png" alt="Ramo Diana de Petunia"
+                            class="aspect-[3/2] w-full rounded-xl object-cover" loading="lazy">
+                        <div class="mt-4 flex items-center justify-between gap-3">
+                            <h3 class="font-texto text-lg font-light md:text-lg">
+                                Ramo Olivia
+                            </h3>
+                            <p class="whitespace-nowrap text-lg md:text-2xl">
+                                35 €
+                            </p>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <!-- ================= SOBRE NOSOTRAS ================= -->
-        <section id="sobre-nosotras" class="bg-rosa px-5 py-16 md:py-24 dark:bg-rosa-terracota">
-            <div
-                class="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2 text-burdeos dark:text-granate-oscuro">
 
-                <!-- Fotografía de Lili y Rosa -->
-                <div>
-                    <img src="img/nosotras.png" alt="Lili y Rosa preparando un ramo en la floristería Petunia"
-                        class="h-auto w-full rounded-xl object-cover" loading="lazy">
-                </div>
+        <!-- ================= TALLERES ================= -->
+        <section id="talleres" class="bg-rosa px-5 py-16 md:py-24 dark:bg-rosa-terracota">
+            <div class="mx-auto max-w-6xl space-y-20 md:space-y-32">
 
-                <!-- Nuestra historia -->
-                <div class="text-burdeos">
-                    <h2 class="font-rotulo text-4xl leading-tight md:text-5xl lg:text-6xl">
-                        Las flores de siempre,<br>
-                        una nueva historia.
-                    </h2>
-                    <p class="mt-6 max-w-lg font-texto text-base font-light leading-relaxed md:text-lg">
-                        En 1976 la abuela Petunia fundó la floristería
-                        que hoy sus nietas Lili y Rosa quieren llevar
-                        a lo más alto, unidas por el amor que su abuela
-                        tenía a las flores.
-                    </p>
-                    <a href="sobre-nosotras.html"
-                        class="mt-6 inline-block rounded-full bg-burdeos px-5 py-2 text-xs font-medium text-crema transition-colors duration-300 hover:bg-crema hover:text-burdeos focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-burdeos sm:px-6 sm:py-2.5 sm:text-sm dark:bg-granate-oscuro dark:text-crema dark:hover:bg-rosa-oscuro dark:hover:text-granate-oscuro">
-                        Conócenos
-                    </a>
-                </div>
+                <!-- ========== TALLER DE RAMOS ========== -->
+                <article class="grid items-center gap-8 md:grid-cols-2 md:gap-12">
+
+                    <!-- Fotografía -->
+                    <div>
+                        <img src="img/talleres.png" alt="Mesa con flores y materiales para un taller de ramos"
+                            class="aspect-[3/2] w-full rounded-xl object-cover" loading="lazy">
+                    </div>
+
+                    <!-- Información -->
+                    <div class="text-burdeos dark:text-granate-oscuro">
+
+                        <h2 class="font-rotulo text-4xl leading-tight md:text-5xl">
+                            Taller de ramos
+                        </h2>
+
+                        <p class="mt-4 max-w-md font-texto text-sm font-light leading-relaxed sm:text-base md:text-lg">
+                            Aprende a combinar flores, colores y formas
+                            para preparar tu propio ramo. Un rato para
+                            desconectar, crear con las manos y llevarte
+                            algo bonito hecho por ti. No necesitas
+                            experiencia previa.
+                        </p>
+
+                        <a href="contacto.html"
+                            class="mt-5 inline-block rounded-full bg-burdeos px-5 py-2 text-xs font-medium text-crema transition-colors duration-300 hover:bg-crema hover:text-burdeos focus-visible:outline-2 focus-visible:outline-offset-4 sm:px-6 sm:py-2.5 sm:text-sm dark:bg-granate-oscuro dark:text-crema dark:hover:bg-rosa-oscuro dark:hover:text-granate-oscuro">
+                            ¡Apúntate aquí!
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <!-- ========== TALLER DE CUADROS FLORALES ========== -->
+                <article class="grid items-center gap-8 md:grid-cols-2 md:gap-12">
+
+                    <!-- Fotografía -->
+                    <div>
+                        <img src="img/taller-cuadros.png" alt="Cuadro decorativo hecho con flores prensadas"
+                            class="aspect-[3/2] w-full rounded-xl object-cover" loading="lazy">
+                    </div>
+
+                    <!-- Información -->
+                    <div class="text-burdeos dark:text-granate-oscuro">
+
+                        <h2 class="font-rotulo text-4xl leading-tight md:text-5xl">
+                            Taller de cuadros florales
+                        </h2>
+
+                        <p class="mt-4 max-w-md font-texto text-sm font-light leading-relaxed sm:text-base md:text-lg">
+                            Crea una composición con flores y pétalos
+                            prensados y conviértela en un cuadro para
+                            llevarte a casa. Te acompañamos paso a paso:
+                            solo necesitas ganas de probar y dejarte llevar.
+                        </p>
+
+                        <a href="contacto.html"
+                            class="mt-5 inline-block rounded-full bg-burdeos px-5 py-2 text-xs font-medium text-crema transition-colors duration-300 hover:bg-crema hover:text-burdeos focus-visible:outline-2 focus-visible:outline-offset-4 sm:px-6 sm:py-2.5 sm:text-sm dark:bg-granate-oscuro dark:text-crema dark:hover:bg-rosa-oscuro dark:hover:text-granate-oscuro">
+                            ¡Apúntate aquí!
+                        </a>
+
+                    </div>
+
+                </article>
 
             </div>
+
         </section>
+
 
 
         <!-- ================= VISÍTANOS ================= -->
