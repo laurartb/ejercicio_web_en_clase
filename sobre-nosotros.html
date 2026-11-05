@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petunia</title>
+
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- ===== CSS DE LIBRERÍAS (Persona B los añade aquí) ===== -->
+
+    <!-- Nuestro CSS propio -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Tailwind desde el CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Sistema de diseño -->
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+
+        @theme static {
+            --color-crema: #fef8ec;
+            --color-burdeos: #661e24;
+            --color-rosa: #eba39d;
+
+            --color-fondo: #fef8ec;
+            --color-superficie: #fef8ec;
+            --color-texto: #661e24;
+            --color-suave: #661e24;
+            --color-acento: #661e24;
+            --color-borde: #eba39d;
+
+            --color-rosa-oscuro: #D39E9A;
+            --color-granate-oscuro: #32171C;
+            --color-rosa-terracota: #B76862;
+
+            --font-rotulo: "Imperial Script", cursive;
+            --font-texto: "Montserrat", sans-serif;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-fondo font-texto text-texto antialiased transition-colors duration-500 dark:bg-[#32171c] dark:text-crema">
+
+    <!-- ================= CABECERA ================= -->
+    <header class="fixed inset-x-0 top-4 z-50 px-4 md:top-8">
+        <div
+            class="menu-vidrio relative mx-auto flex max-w-5xl flex-row items-center justify-between gap-2 rounded-full px-3 py-2 text-crema md:gap-3 md:px-8 md:py-3">
+            <a href="index.html" class="shrink-0 font-rotulo text-xl leading-none font-bold md:text-2xl">
+                Petunia
+            </a>
+            <!-- es el modo claro oscuro que hay que cambiar aun -->
+            <div class="ml-auto flex shrink-0 items-center gap-2 md:order-last md:ml-0">
+
+                <!-- botón abre y cierra el menú en móvil en responsive -->
+                <button id="boton-menu" type="button" aria-expanded="false" aria-controls="menu"
+                    class="flex h-9 items-center justify-center whitespace-nowrap rounded-full bg-burdeos px-3 text-[11px] font-medium text-crema transition-colors hover:bg-burdeos/80 md:hidden">
+                    Menú
+                </button>
+                <!-- este botón cambia entre modo claro y oscuro -->
+                <button id="boton-tema" type="button" aria-pressed="false"
+                    class="flex h-9 items-center justify-center whitespace-nowrap rounded-full border border-crema/50 px-3 text-[11px] font-medium transition-colors hover:bg-crema/20 md:h-10 md:px-4 md:text-sm">
+                    Modo oscuro
+                </button>
+
+            </div>
+
+            <nav aria-label="Navegación principal"
+                class="absolute inset-x-0 top-full mt-3 md:static md:mt-0 md:bg-transparent">
+                <ul id="menu"
+                    class="hidden flex-col items-center gap-2 rounded-3xl bg-burdeos/95 px-6 py-5 text-center shadow-xl backdrop-blur-xl dark:bg-granate-oscuro/95 dark:text-rosa-terracota md:flex md:flex-row md:gap-8 md:rounded-none md:bg-transparent md:p-0 md:text-left md:shadow-none md:backdrop-blur-none md:dark:bg-transparent">
+                    <li><a href="tienda.html"
+                            class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Tienda</a>
+                    </li>
+                    <li><a href="servicios.html"
+                            class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Servicios</a>
+                    </li>
+                    <li><a href="sobre-nosotros.html"
+                            class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Sobre
+                            nosotros</a></li>
+                    <li><a href="contacto.html"
+                            class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+    <section id="inicio" class="relative h-dvh">
+
+        <img
+            src="img/tienda.png"
+            alt="Entrada de la floristería Petunia"
+            width="1672"
+            height="941"
+            class="block h-full w-full object-cover object-center"
+        >
+
+    </section>
+
+    <section
+        id="historia"
+        class="relative z-10 -mt-[50dvh] bg-rosa px-5 py-12 text-burdeos md:py-16 dark:bg-rosa-terracota dark:text-granate-oscuro"
+    >
+
+        <div
+            class="pointer-events-none absolute inset-x-0 bottom-full h-40 bg-gradient-to-b from-transparent to-rosa md:h-52 dark:to-rosa-terracota"
+            aria-hidden="true"
+        ></div>
+
+        <div class="mx-auto max-w-5xl">
+
+            <h1 class="mb-10 text-center font-rotulo text-5xl md:mb-16 md:text-7xl">
+                Sobre nosotros
+            </h1>
+
+            <div class="grid items-start gap-8 md:grid-cols-5 md:gap-12">
+
+                <div class="space-y-6 md:col-span-2">
+
+                    <img
+                        src="img/manos-abuela.png"
+                        alt="Las manos de nuestra abuela envolviendo un ramo de flores"
+                        class="aspect-[3/2] w-full object-cover"
+                        loading="lazy"
+                    >
+
+                    <img
+                        src="img/hermanas.png"
+                        alt="Lili y Rosa preparando ramos en la floristería"
+                        class="aspect-[3/2] w-full object-cover"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="md:col-span-3">
+
+                    <h2 class="font-rotulo text-4xl leading-tight md:text-5xl">
+                        “Lo nuestro viene de antes.”
+                    </h2>
+
+                    <div class="mt-5 space-y-5 text-sm font-light leading-relaxed md:text-base">
+
+                        <p>
+                            Somos Lili y Rosa, dos hermanas que crecimos
+                            pasando las tardes en la floristería de nuestra
+                            abuela Petunia. Mientras ella preparaba los
+                            encargos, nosotras recogíamos los tallos que
+                            sobraban e intentábamos hacer nuestros primeros
+                            ramos. Allí aprendimos que, antes de elegir las
+                            flores, había que escuchar la historia de quien
+                            venía a buscarlas.
+                        </p>
+
+                        <p>
+                            Con los años tomamos caminos distintos: una
+                            entre números, trabajando en economía, y la
+                            otra entre planos, dedicada a la arquitectura.
+                            Pero cuando nuestra abuela se jubiló y la
+                            tienda cerró, las dos empezamos a pensar en
+                            volver. Decidimos dejar nuestros trabajos,
+                            formarnos en diseño floral y aprender de ella
+                            todo lo que aún nos quedaba por descubrir.
+                        </p>
+
+                        <p>
+                            Hoy hemos vuelto a abrir las puertas de
+                            Petunia. Conservamos su mesa de madera,
+                            sus tijeras y esa forma de atender sin
+                            prisas. A los ramos de siempre les hemos
+                            sumado talleres, bodas y nuevas ideas,
+                            manteniendo el cariño con el que ella empezó.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="mt-8 text-sm font-light leading-relaxed md:mt-10 md:text-base">
+                Nos gusta pensar que cada persona que entra continúa
+                un poquito esta historia. Con una flor para casa,
+                un ramo inesperado o las flores de un día que
+                recordará siempre.
+            </p>
+
+            <div class="relative mx-auto mt-10 mb-6 w-4/5 max-w-sm md:mt-14">
+
+                <img
+                    src="img/rosa.png"
+                    alt="Dos manos entregándose una rosa en la floristería"
+                    class="aspect-[3/2] w-full object-cover"
+                    loading="lazy"
+                >
+
+                <img
+                    src="img/sello.png"
+                    alt=""
+                    aria-hidden="true"
+                    class="absolute -right-4 -bottom-5 w-16 rotate-12 object-contain md:-right-6 md:w-20"
+                    loading="lazy"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+    <footer class="bg-burdeos px-5 py-12 text-crema dark:bg-granate-oscuro">
+        <p class="text-center font-rotulo text-6xl">Petunia</p>
+        <nav aria-label="Navegación del pie de página" class="mt-8">
+            <ul class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm">
+                <li>
+                    <a href="tienda.html" class="hover:text-rosa">Tienda</a>
+                </li>
+                <li>
+                    <a href="servicios.html" class="hover:text-rosa">Servicios</a>
+                </li>
+                <li>
+                    <a href="sobre-nosotras.html" class="hover:text-rosa">Sobre nosotras</a>
+                </li>
+                <li>
+                    <a href="contacto.html" class="hover:text-rosa">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+
+    <!-- ===== JS DE LIBRERÍAS (Persona B los añade aquí, ANTES de nuestro JS) ===== -->
+
+    <!-- ===== NUESTRO JAVASCRIPT ===== -->
+    <script src="js/interfaz.js"></script>
+    <script src="js/librerias.js"></script>
+</body>
+
+</html>
