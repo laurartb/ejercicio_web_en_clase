@@ -37,13 +37,18 @@
             --color-acento: #661e24;
             --color-borde: #eba39d;
 
+            --color-rosa-oscuro: #D39E9A;
+            --color-granate-oscuro: #32171C;
+            --color-rosa-terracota: #B76862;
+
             --font-rotulo: "Imperial Script", cursive;
             --font-texto: "Montserrat", sans-serif;
         }
     </style>
 </head>
 
-<body class="bg-fondo font-texto text-texto antialiased transition-colors duration-500">
+<body
+    class="bg-fondo font-texto text-texto antialiased transition-colors duration-500 dark:bg-[#32171c] dark:text-crema">
 
     <!-- ================= CABECERA ================= -->
     <header class="fixed inset-x-0 top-4 z-50 px-4 md:top-8">
@@ -94,17 +99,20 @@
                 class="block h-full w-full object-cover object-center">
 
             <!-- Degradado entre la fotografía y el fondo burdeos -->
-            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-burdeos md:h-64"
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-burdeos dark:to-granate-oscuro md:h-64"
                 aria-hidden="true">
             </div>
         </section>
 
-        <section class="bg-burdeos px-5 py-16 text-crema md:py-24">
-            <h1 class="mx-auto max-w-5xl text-center font-rotulo text-5xl leading-tight md:text-7xl">“Donde los momentos
-                florecen”</h1>
+        <!-- Frase de bienvenida -->
+        <section class="bg-burdeos px-5 py-16 text-crema md:py-24 dark:bg-granate-oscuro">
+            <h1 class="mx-auto max-w-5xl text-center font-rotulo text-5xl leading-tight md:text-7xl">
+                “Donde los momentos florecen”</h1>
         </section>
-        <section id="categorias" class="bg-burdeos px-5 pb-16 text-rosa md:pb-24">
 
+        <!-- Categorías -->
+        <section id="categorias"
+            class="bg-burdeos px-5 pb-16 text-rosa md:pb-24 dark:bg-granate-oscuro dark:text-rosa-oscuro">
             <div class="mx-auto max-w-5xl">
                 <h2 class="mb-8 text-center font-rotulo text-5xl md:mb-12 md:text-7xl">
                     Categorías
@@ -135,19 +143,20 @@
                 </div>
                 <div class="mt-10 text-center">
                     <a href="servicios.html"
-                        class="inline-block rounded-full bg-rosa px-5 py-2 text-sm text-burdeos text-xs font-medium transition-colors duration-300 hover:bg-crema focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-burdeos sm:px-6 sm:py-2.5 sm:text-sm">
-                        Ver todo </a>
+                        class="inline-block rounded-full bg-rosa px-5 py-2 text-xs font-medium text-burdeos transition-colors duration-300 hover:bg-crema focus-visible:outline-2 focus-visible:outline-offset-4 sm:px-6 sm:py-2.5 sm:text-sm dark:bg-rosa-terracota dark:text-crema dark:hover:bg-rosa-oscuro dark:hover:text-granate-oscuro">
+                        Ver todo
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- ================= LOS FAVORITOS DE PETUNIA ================= -->
-        <section id="productos" class="bg-crema px-5 py-16 md:py-24">
+        <section id="productos" class="bg-crema px-5 py-16 md:py-24 dark:bg-rosa-oscuro">
 
             <div class="mx-auto max-w-6xl">
 
                 <!-- Título -->
-                <h2 class="mb-10 text-center font-rotulo text-5xl text-burdeos md:mb-14 md:text-7xl">
+                <h2 class="mb-10 text-center font-rotulo text-5xl text-burdeos md:mb-14 md:text-7xl dark:text-granate-oscuro">
                     Los favoritos de Petunia
                 </h2>
 
@@ -156,7 +165,7 @@
 
                     <!-- Ramo Lucía -->
                     <article
-                        class="group rounded-2xl bg-burdeos p-3 text-crema transition-transform duration-300 hover:-translate-y-1">
+                        class="group rounded-2xl bg-burdeos p-3 text-crema transition-transform duration-300 hover:-translate-y-1 dark:bg-granate-oscuro">
                         <img src="img/ramo-lucia.png" alt="Ramo Lucía de Petunia"
                             class="aspect-[3/2] w-full rounded-xl object-cover" loading="lazy">
                         <div class="mt-4 flex items-center justify-between gap-3">
@@ -171,7 +180,7 @@
 
                     <!-- Ramo Diana -->
                     <article
-                        class="group rounded-2xl bg-burdeos p-3 text-crema transition-transform duration-300 hover:-translate-y-1">
+                        class=" group rounded-2xl bg-burdeos p-3 text-crema transition-transform duration-300 hover:-translate-y-1 dark:bg-granate-oscuro">
                         <img src="img/ramo-diana.png" alt="Ramo Diana de Petunia"
                             class="aspect-[3/2] w-full rounded-xl object-cover" loading="lazy">
                         <div class="mt-4 flex items-center justify-between gap-3">
@@ -186,7 +195,7 @@
 
                     <!-- Ramo Bianca -->
                     <article
-                        class="group rounded-2xl bg-burdeos p-3 text-crema transition-transform duration-300 hover:-translate-y-1">
+                        class="group rounded-2xl bg-burdeos p-3 text-crema transition-transform duration-300 hover:-translate-y-1 dark:bg-granate-oscuro">
                         <img src="img/ramo-bianca.png" alt="Ramo Bianca de Petunia"
                             class="aspect-[3/2] w-full rounded-xl object-cover" loading="lazy">
                         <div class="mt-4 flex items-center justify-between gap-3">
@@ -201,7 +210,7 @@
 
                     <!-- Ramo Vio -->
                     <article
-                        class="group rounded-2xl bg-burdeos p-3 text-crema transition-transform duration-300 hover:-translate-y-1">
+                        class="group rounded-2xl bg-burdeos p-3 text-crema transition-transform duration-300 hover:-translate-y-1 dark:bg-granate-oscuro">
                         <img src="img/ramo-vio.png" alt="Ramo Vio de Petunia"
                             class="aspect-[3/2] w-full rounded-xl object-cover" loading="lazy">
 
@@ -219,7 +228,7 @@
                 <!-- Botón -->
                 <div class="mt-10 text-center">
                     <a href="tienda.html"
-                        class="inline-block rounded-full bg-burdeos px-5 py-2 text-sm text-crema text-xs font-medium transition-colors duration-300 hover:bg-rosa hover:text-burdeos focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-burdeos sm:px-6 sm:py-2.5 sm:text-sm">
+                        class="inline-block rounded-full bg-burdeos px-5 py-2 text-xs font-medium text-crema transition-colors duration-300 hover:bg-rosa hover:text-burdeos focus-visible:outline-2 focus-visible:outline-offset-4 sm:px-6 sm:py-2.5 sm:text-sm dark:bg-granate-oscuro dark:hover:bg-rosa-terracota dark:hover:text-crema">
                         Ver todos los ramos
                     </a>
                 </div>
@@ -228,8 +237,8 @@
         </section>
 
         <!-- ================= SOBRE NOSOTRAS ================= -->
-        <section id="sobre-nosotras" class="bg-rosa px-5 py-16 md:py-24">
-            <div class="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
+        <section id="sobre-nosotras" class="bg-rosa px-5 py-16 md:py-24 dark:bg-rosa-terracota">
+            <div class="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2 text-burdeos dark:text-granate-oscuro">
 
                 <!-- Fotografía de Lili y Rosa -->
                 <div>
@@ -250,7 +259,7 @@
                         tenía a las flores.
                     </p>
                     <a href="sobre-nosotras.html"
-                        class="mt-6 inline-block rounded-full bg-burdeos px-5 py-2 text-xs font-medium text-crema transition-colors duration-300 hover:bg-crema hover:text-burdeos focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-burdeos sm:px-6 sm:py-2.5 sm:text-sm">
+                        class="mt-6 inline-block rounded-full bg-burdeos px-5 py-2 text-xs font-medium text-crema transition-colors duration-300 hover:bg-crema hover:text-burdeos focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-burdeos sm:px-6 sm:py-2.5 sm:text-sm dark:bg-granate-oscuro dark:text-crema dark:hover:bg-rosa-oscuro dark:hover:text-granate-oscuro">
                         Conócenos
                     </a>
                 </div>
@@ -260,7 +269,7 @@
 
 
         <!-- ================= VISÍTANOS ================= -->
-        <section id="visitanos" class="bg-crema px-5 py-16 md:py-24">
+        <section id="visitanos" class="bg-crema px-5 py-16 md:py-24 dark:bg-rosa-oscuro">
             <div class="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
 
                 <!-- Sello de Petunia -->
@@ -270,7 +279,7 @@
                 </div>
 
                 <!-- Tarjeta de ubicación -->
-                <div class="rounded-xl bg-burdeos p-5 text-crema md:p-7">
+                <div class="rounded-xl bg-burdeos p-5 text-crema md:p-7 dark:bg-granate-oscuro">
                     <h2 class="font-rotulo text-4xl md:text-5xl">
                         ¡Ven a visitarnos!
                     </h2>
@@ -292,7 +301,7 @@
 
     </main>
 
-    <footer class="bg-burdeos px-5 py-12 text-crema">
+    <footer class="bg-burdeos px-5 py-12 text-crema dark:bg-granate-oscuro">
         <p class="text-center font-rotulo text-6xl">Petunia</p>
         <nav aria-label="Navegación del pie de página" class="mt-8">
             <ul class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm">

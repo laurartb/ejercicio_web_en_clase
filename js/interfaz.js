@@ -34,3 +34,38 @@ botonMenu.addEventListener("click", () => {
     const abierto = !menu.classList.contains("hidden");
     botonMenu.setAttribute("aria-expanded", abierto);
 });
+
+
+/* ========== MODO CLARO Y OSCURO PETUNIA ========== */
+
+const botonTema = document.getElementById("boton-tema");
+
+// Función para aplicar el tema
+function cambiarTema(oscuro) {
+
+    document.documentElement.classList.toggle("dark", oscuro);
+
+    if (botonTema) {
+        botonTema.textContent = oscuro ? "Modo claro" : "Modo oscuro";
+        botonTema.setAttribute("aria-pressed", String(oscuro));
+    }
+
+    // Guardar la elección
+    localStorage.setItem("tema-petunia", oscuro ? "oscuro" : "claro");
+}
+
+// Recuperar el tema guardado
+const temaGuardado = localStorage.getItem("tema-petunia");
+
+cambiarTema(temaGuardado === "oscuro");
+
+// Detectar clic en el botón
+if (botonTema) {
+    botonTema.addEventListener("click", () => {
+
+        const oscuro = document.documentElement.classList.contains("dark");
+
+        cambiarTema(!oscuro);
+
+    });
+}
