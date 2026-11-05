@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Aguja y el Tornillo · Ferretería y mercería en Lavapiés</title>
+    <title>Floristería Petunia</title>
 
     <!-- Tipografías -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- ===== CSS DE LIBRERÍAS (Persona B los añade aquí) ===== -->
 
@@ -20,32 +20,37 @@
 
     <!-- Sistema de diseño -->
     <style type="text/tailwindcss">
-        /* Modo oscuro con la clase .dark en <html> (la pone el JavaScript) */
         @custom-variant dark (&:where(.dark, .dark *));
 
         @theme static {
-            /* Colores del modo claro. Los del modo oscuro están en css/styles.css */
-            --color-fondo: #f4ecdc;
-            --color-superficie: #fffaf0;
-            --color-texto: #2a1a10;
-            --color-suave: #6e5236;
-            --color-acento: #93362a;
-            --color-borde: #d9c7a3;
+            --color-crema: #fef8ec;
+            --color-burdeos: #661e24;
+            --color-rosa: #eba39d;
 
-            --font-rotulo: "Fraunces", Georgia, serif;
-            --font-texto: "Work Sans", system-ui, sans-serif;
+            --color-fondo: #fef8ec;
+            --color-superficie: #fef8ec;
+            --color-texto: #661e24;
+            --color-suave: #661e24;
+            --color-acento: #661e24;
+            --color-borde: #eba39d;
+
+            --font-rotulo: "Imperial Script", cursive;
+            --font-texto: "Montserrat", sans-serif;
         }
     </style>
 </head>
 <body class="bg-fondo font-texto text-texto antialiased transition-colors duration-500">
 
-    <!-- ================= CABECERA ================= -->
-    <header class="sticky top-0 z-20 border-b border-borde bg-fondo/95 backdrop-blur">
-        <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-4">
-            <a href="#inicio" class="font-rotulo text-xl leading-tight font-bold md:text-2xl">
-                La Aguja <span class="text-acento">&amp;</span><br class="md:hidden"> el Tornillo
-            </a>
 
+
+    
+    <!-- ================= CABECERA ================= -->
+    <header class="sticky inset-x-0 top-4 z-20 px-4 md:top-8 backdrop-blur">
+        <div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 rounded-3xl px-5 py-3 text-crema backdrop-blur-md md:flex-row md:rounded-full md:px-8">
+            <a href="#inicio" class="font-rotulo text-xl leading-tight font-bold md:text-2xl">
+                Floristería
+            </a>
+            <!-- es el modo claro oscuro que hay que cambiar aun -->
             <div class="flex items-center gap-2 md:order-last">
                 <!-- Persona A: este botón cambia entre modo claro y oscuro -->
                 <button id="boton-tema" type="button" aria-pressed="false"
@@ -53,19 +58,19 @@
                     Modo oscuro
                 </button>
 
-                <!-- Persona A: este botón abre y cierra el menú en móvil -->
+                <!-- botón abre y cierra el menú en móvil en responsive -->
                 <button id="boton-menu" type="button" aria-expanded="false" aria-controls="menu"
                         class="rounded-full bg-acento px-3 py-2 text-sm font-semibold text-fondo md:hidden">
                     Menú
                 </button>
             </div>
 
-            <nav class="w-full md:ml-auto md:w-auto" aria-label="Principal">
+            <nav aria-label="Navegación principal">
                 <ul id="menu" class="hidden space-y-1 pb-2 md:flex md:gap-8 md:space-y-0 md:pb-0">
-                    <li><a href="#inicio" class="enlace-menu block py-2">Inicio</a></li>
-                    <li><a href="#productos" class="enlace-menu block py-2">Productos</a></li>
-                    <li><a href="#preguntas" class="enlace-menu block py-2">Preguntas</a></li>
-                    <li><a href="#visitanos" class="enlace-menu block py-2">Visítanos</a></li>
+                    <li><a href="tienda.html" class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Tienda</a></li>
+                    <li><a href="servicios.html" class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Servicios</a></li>
+                    <li><a href="sobre-nosotras.html" class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Sobre nosotras</a></li>
+                    <li><a href="contacto.html" class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -73,23 +78,45 @@
 
     <main>
         <!-- ================= PORTADA ================= -->
-        <section id="inicio" class="mx-auto max-w-6xl px-5 py-20 md:py-28">
-            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-suave">Ferretería y mercería · Lavapiés · Desde 1962</p>
-            <h1 class="mt-5 max-w-3xl font-rotulo text-5xl leading-tight font-bold md:text-7xl">
-<<<<<<< Updated upstream
-                ESTA ES LA PARFTE DE LAURA Si no lo tenemos, <span class="text-acento italic">se lo pedimos.</span>
-=======
-                Si no lo tenemos, <span class="text-acento italic">se lo pedimos.</span>
->>>>>>> Stashed changes
-            </h1>
-            <p class="mt-6 max-w-xl text-lg text-suave">
-                Tornillos sueltos, botones de nácar, hilo de todos los colores y consejo de toda la vida. Tres generaciones detrás del mismo mostrador.
-            </p>
-            <a href="#productos" class="mt-10 inline-block rounded-full bg-acento px-8 py-3 font-semibold text-fondo hover:opacity-90">
-                Ver lo más pedido
-            </a>
+        <section id="inicio">
+            <img
+                src="../img/tienda.png"
+                alt="Entrada de la floristería Petunia"
+                width="1672"
+                height="941"
+                class="block h-auto w-full"
+            >
         </section>
 
+        <section class="bg-burdeos px-5 py-16 text-crema md:py-24">
+            <h1 class="mx-auto max-w-5xl text-center font-rotulo text-5xl leading-tight md:text-7xl">“Donde los momentos florecen”</h1>
+        </section>
+        <section id="categorias" class="bg-burdeos px-5 pb-16 text-rosa md:pb-24">
+
+    <div class="mx-auto max-w-5xl">
+        <h2 class="mb-8 text-center font-rotulo text-5xl md:mb-12 md:text-7xl">
+            Categorías
+        </h2>
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
+            <a href="tienda.html" class="group block text-center focus-visible:outline-2 focus-visible:outline-offset-4">
+                <img src="../img/flores.png" alt="Ramo de flores blancas, rosas y lilas" width="1122" height="1402" loading="lazy" class="mx-auto aspect-[314/371] w-full max-w-sm rounded-lg object-cover transition-transform duration-300 group-hover:-translate-y-1">
+                <h3 class="mt-3 text-lg font-light md:text-2xl">Flores</h3>
+            </a>
+            <a href="servicios.html#talleres" class="group block text-center focus-visible:outline-2 focus-visible:outline-offset-4">
+                <img src="../img/talleres.png" alt="Mesa preparada con flores y materiales para un taller" width="1448" height="1086" loading="lazy" class="mx-auto aspect-[314/371] w-full max-w-sm rounded-lg object-cover transition-transform duration-300 group-hover:-translate-y-1">
+                <h3 class="mt-3 text-lg font-light md:text-2xl">Talleres</h3>
+            </a>
+
+            <a href="servicios.html#encargos" class="group block text-center focus-visible:outline-2 focus-visible:outline-offset-4">
+                <img src="../img/encargos.png"alt="Ramo de novia de flores blancas con una cinta" width="1122" height="1402" loading="lazy" class="mx-auto aspect-[314/371] w-full max-w-sm rounded-lg object-cover transition-transform duration-300 group-hover:-translate-y-1">
+                <h3 class="mt-3 text-lg font-light md:text-2xl">Encargos</h3>
+            </a>
+        </div>
+        <div class="mt-10 text-center">
+            <a href="servicios.html" class="inline-block rounded-full bg-rosa px-6 py-2 text-sm text-burdeos transition-colors hover:bg-crema focus-visible:outline-2 focus-visible:outline-offset-4">Ver todo </a>
+        </div>
+    </div>
+</section>
         <!-- ================= PRODUCTOS ================= -->
         <section id="productos" class="border-y border-borde bg-superficie py-20">
             <div class="mx-auto max-w-6xl px-5">
@@ -145,46 +172,40 @@
             </div>
         </section>
 
-        <!-- ================= PREGUNTAS FRECUENTES ================= -->
-        <!-- Reto extra (en casa): convertir en acordeón con jQuery -->
-        <section id="preguntas" class="mx-auto max-w-3xl px-5 py-20">
-            <h2 class="titulo-seccion font-rotulo text-4xl font-bold">Preguntas frecuentes</h2>
-
-            <div class="mt-10 divide-y divide-borde border-y border-borde">
-                <div class="py-5">
-                    <button type="button" class="pregunta w-full text-left font-rotulo text-xl font-bold">¿Vendéis tornillos sueltos?</button>
-                    <p class="respuesta mt-3 text-suave">Sí, y también tuercas, arandelas y tacos. Nos traes el que se te ha perdido y te buscamos su pareja.</p>
-                </div>
-                <div class="py-5">
-                    <button type="button" class="pregunta w-full text-left font-rotulo text-xl font-bold">¿Hacéis arreglos de costura?</button>
-                    <p class="respuesta mt-3 text-suave">No cosemos, pero te vendemos todo lo necesario y te explicamos cómo hacerlo. Bajos, botones y cremalleras, sin miedo.</p>
-                </div>
-                <div class="py-5">
-                    <button type="button" class="pregunta w-full text-left font-rotulo text-xl font-bold">¿Hacéis copias de llaves?</button>
-                    <p class="respuesta mt-3 text-suave">Sí, en el momento. Las de seguridad tardan un par de días porque las pedimos al fabricante.</p>
-                </div>
-            </div>
-        </section>
-
         <!-- ================= VISÍTANOS ================= -->
-        <section id="visitanos" class="bg-texto py-20 text-fondo">
-            <div class="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-2">
-                <div>
-                    <h2 class="font-rotulo text-4xl font-bold">Visítanos</h2>
-                    <p class="mt-4 text-lg">Calle del Carmen, 12 · 28012 Madrid</p>
-                    <p class="mt-1 opacity-70">Metro Lavapiés (línea 3)</p>
-                </div>
-                <div class="rounded-2xl border border-fondo/30 p-6">
-                    <p class="text-sm font-semibold uppercase tracking-[0.3em] opacity-70">Horario</p>
-                    <!-- Paso del conflicto: los dos cambiáis esta línea -->
-                    <p id="horario" class="mt-3 font-rotulo text-2xl">Horario por decidir</p>
-                </div>
+        <section id="visitanos" class="bg-crema px-5 py-16">
+            <div class="mx-auto max-w-xl rounded-lg bg-burdeos p-6 text-crema">
+                <h2 class="font-rotulo text-5xl">¡Ven a visitarnos!</h2>
+                <p class="mt-3 text-sm">
+                    Calle del Patio, 12 · Madrid
+                </p>
+                <img src="../img/mapa.png" alt="Mapa ilustrativo de la ubicación de Petunia" width="1672" height="941" loading="lazy" class="mt-5 block h-auto w-full rounded-md">
+            </div>
+            <div class="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
+                <img
+                    src="../img/sello.png" alt="Sello ilustrado de la floristería Petunia" width="1122" height="1402" loading="lazy" class="mx-auto w-3/5 max-w-xs -rotate-6">
             </div>
         </section>
     </main>
 
-    <footer class="py-8 text-center text-sm text-suave">
-        La Aguja y el Tornillo · Desde 1962 · Práctica de clase, MWHE
+    <footer class="bg-burdeos px-5 py-12 text-crema">
+        <p class="text-center font-rotulo text-6xl">Petunia</p>
+        <nav aria-label="Navegación del pie de página" class="mt-8">
+            <ul class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm">
+                <li>
+                    <a href="tienda.html" class="hover:text-rosa">Tienda</a>
+                </li>
+                <li>
+                    <a href="servicios.html" class="hover:text-rosa">Servicios</a>
+                </li>
+                <li>
+                    <a href="sobre-nosotras.html" class="hover:text-rosa">Sobre nosotras</a>
+                </li>
+                <li>
+                    <a href="contacto.html" class="hover:text-rosa">Contacto</a>
+                </li>
+            </ul>
+        </nav>
     </footer>
 
     <!-- ===== JS DE LIBRERÍAS (Persona B los añade aquí, ANTES de nuestro JS) ===== -->
