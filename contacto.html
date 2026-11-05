@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petunia</title>
+
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- ===== CSS DE LIBRERÍAS (Persona B los añade aquí) ===== -->
+
+    <!-- Nuestro CSS propio -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Tailwind desde el CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Sistema de diseño -->
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+
+        @theme static {
+            --color-crema: #fef8ec;
+            --color-burdeos: #661e24;
+            --color-rosa: #eba39d;
+
+            --color-fondo: #fef8ec;
+            --color-superficie: #fef8ec;
+            --color-texto: #661e24;
+            --color-suave: #661e24;
+            --color-acento: #661e24;
+            --color-borde: #eba39d;
+
+            --color-rosa-oscuro: #D39E9A;
+            --color-granate-oscuro: #32171C;
+            --color-rosa-terracota: #B76862;
+
+            --font-rotulo: "Imperial Script", cursive;
+            --font-texto: "Montserrat", sans-serif;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-fondo font-texto text-texto antialiased transition-colors duration-500 dark:bg-[#32171c] dark:text-crema">
+
+    <!-- ================= CABECERA ================= -->
+    <header class="fixed inset-x-0 top-4 z-50 px-4 md:top-8">
+        <div
+            class="menu-vidrio relative mx-auto flex max-w-5xl flex-row items-center justify-between gap-2 rounded-full px-3 py-2 text-crema md:gap-3 md:px-8 md:py-3">
+            <a href="#inicio" class="shrink-0 font-rotulo text-xl leading-none font-bold md:text-2xl">
+                Petunia
+            </a>
+            <!-- es el modo claro oscuro que hay que cambiar aun -->
+            <div class="ml-auto flex shrink-0 items-center gap-2 md:order-last md:ml-0">
+
+                <!-- botón abre y cierra el menú en móvil en responsive -->
+                <button id="boton-menu" type="button" aria-expanded="false" aria-controls="menu"
+                    class="flex h-9 items-center justify-center whitespace-nowrap rounded-full bg-burdeos px-3 text-[11px] font-medium text-crema transition-colors hover:bg-burdeos/80 md:hidden">
+                    Menú
+                </button>
+                <!-- este botón cambia entre modo claro y oscuro -->
+                <button id="boton-tema" type="button" aria-pressed="false"
+                    class="flex h-9 w-[125px] shrink-0 items-center justify-center whitespace-nowrap rounded-full border border-crema/50 px-3 text-[11px] font-medium transition-colors hover:bg-crema/20 md:h-10 md:px-4 md:text-sm">
+                    Modo oscuro
+                </button>
+
+            </div>
+
+            <nav aria-label="Navegación principal"
+                class="absolute inset-x-0 top-full mt-3 md:static md:mt-0 md:bg-transparent">
+                <ul id="menu"
+                    class="hidden flex-col items-center gap-2 rounded-3xl bg-burdeos/95 px-6 py-5 text-center shadow-xl backdrop-blur-xl dark:bg-granate-oscuro/95 md:flex md:flex-row md:gap-8 md:rounded-none md:bg-transparent md:p-0 md:text-left md:shadow-none md:backdrop-blur-none md:dark:bg-transparent">
+                    <li><a href="tienda.html"
+                            class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Tienda</a>
+                    </li>
+                    <li><a href="servicios.html"
+                            class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Servicios</a>
+                    </li>
+                    <li><a href="sobre-nosotras.html"
+                            class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Sobre
+                            nosotras</a></li>
+                    <li><a href="contacto.html"
+                            class="enlace-menu block py-2 hover:text-rosa focus-visible:outline-2 focus-visible:outline-offset-4">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ================= PORTADA IMG FLORISTERIA ================= -->
+        <section id="inicio" class="relative flex min-h-dvh items-center justify-center px-5 pb-12 pt-28 md:py-32">
+            <img src="img/tienda.png" alt="" aria-hidden="true" width="1672" height="941"
+                class="absolute inset-0 h-full w-full object-cover object-center">
+
+            <!-- Tarjeta de contacto -->
+            <div
+                class="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-10 rounded-2xl border border-white/30 bg-crema/90 p-6 shadow-xl backdrop-blur-md md:grid-cols-2 md:gap-12 md:p-12 dark:border-crema/20 dark:bg-granate-oscuro/90">
+
+                <!-- Texto de presentación -->
+                <div class="text-burdeos dark:text-rosa-terracota">
+
+                    <h1 class="font-texto text-xl font-normal sm:text-2xl">
+                        ¡Cuéntanos tu idea!
+                    </h1>
+
+                    <p class="mt-4 font-rotulo text-4xl leading-tight sm:text-5xl md:text-6xl">
+                        Tú imaginas el momento,<br>
+                        nosotras lo llenamos de flores.
+                    </p>
+
+                </div>
+
+                <!-- Formulario -->
+                <form id="formulario-contacto" class="space-y-4 text-burdeos dark:text-rosa-terracota">
+
+                    <div>
+                        <label for="nombre" class="mb-2 block text-sm sm:text-base">
+                            Nombre
+                        </label>
+                        <input type="text" id="nombre" name="nombre" autocomplete="given-name" required
+                            class="w-full rounded-xl border border-burdeos bg-transparent px-4 py-3 outline-none transition-colors focus:border-rosa-terracota focus:ring-2 focus:ring-rosa-terracota/30 dark:border-rosa-terracota">
+                    </div>
+
+                    <div>
+                        <label for="apellidos" class="mb-2 block text-sm sm:text-base">
+                            Apellidos
+                        </label>
+                        <input type="text" id="apellidos" name="apellidos" autocomplete="family-name" required
+                            class="w-full rounded-xl border border-burdeos bg-transparent px-4 py-3 outline-none transition-colors focus:border-rosa-terracota focus:ring-2 focus:ring-rosa-terracota/30 dark:border-rosa-terracota">
+                    </div>
+
+                    <div>
+                        <label for="telefono" class="mb-2 block text-sm sm:text-base">
+                            Número de teléfono
+                        </label>
+                        <input type="tel" id="telefono" name="telefono" autocomplete="tel" required
+                            class="w-full rounded-xl border border-burdeos bg-transparent px-4 py-3 outline-none transition-colors focus:border-rosa-terracota focus:ring-2 focus:ring-rosa-terracota/30 dark:border-rosa-terracota">
+                    </div>
+
+                    <div>
+                        <label for="idea" class="mb-2 block text-sm sm:text-base">
+                            Escribe tu idea
+                        </label>
+                        <textarea id="idea" name="idea" rows="5" required
+                            class="w-full resize-y rounded-xl border border-burdeos bg-transparent px-4 py-3 outline-none transition-colors focus:border-rosa-terracota focus:ring-2 focus:ring-rosa-terracota/30 dark:border-rosa-terracota">
+                        </textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="rounded-full bg-burdeos px-6 py-3 text-sm font-medium text-crema transition-colors duration-300 hover:bg-rosa-terracota focus-visible:outline-2 focus-visible:outline-offset-4 dark:bg-rosa-terracota dark:hover:bg-rosa-oscuro dark:hover:text-granate-oscuro">
+                        Enviar idea
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= VISÍTANOS ================= -->
+        <section id="visitanos" class="bg-crema px-5 py-16 md:py-24 dark:bg-rosa-oscuro">
+            <div class="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
+
+                <!-- Sello de Petunia -->
+                <div class="flex items-center justify-center">
+                    <img src="img/sello.png" alt="Sello ilustrado de Floristería Petunia"
+                        class="w-3/5 max-w-xs -rotate-6 object-contain" loading="lazy">
+                </div>
+
+                <!-- Tarjeta de ubicación -->
+                <div class="rounded-xl bg-burdeos p-5 text-crema md:p-7 dark:bg-granate-oscuro">
+                    <h2 class="font-rotulo text-4xl md:text-5xl">
+                        ¡Ven a visitarnos!
+                    </h2>
+                    <p class="mt-4 font-texto text-sm md:text-base">
+                        Calle del Patio, 12 · Madrid
+                    </p>
+                    <p class="mt-2 font-texto text-sm md:text-base">
+                        Lunes a viernes: 10:00–14:00 y 17:00–20:00
+                    </p>
+                    <p class="mt-2 font-texto text-sm md:text-base">
+                        Sábados: 10:00–14:00
+                    </p>
+                    <img src="img/mapa.png" alt="Mapa ilustrativo de la ubicación de Petunia"
+                        class="mt-5 aspect-[4/3] w-full rounded-lg object-cover" loading="lazy">
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-burdeos px-5 py-12 text-crema dark:bg-granate-oscuro">
+        <p class="text-center font-rotulo text-6xl">Petunia</p>
+        <nav aria-label="Navegación del pie de página" class="mt-8">
+            <ul class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm">
+                <li>
+                    <a href="tienda.html" class="hover:text-rosa">Tienda</a>
+                </li>
+                <li>
+                    <a href="servicios.html" class="hover:text-rosa">Servicios</a>
+                </li>
+                <li>
+                    <a href="sobre-nosotras.html" class="hover:text-rosa">Sobre nosotras</a>
+                </li>
+                <li>
+                    <a href="contacto.html" class="hover:text-rosa">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+
+    <!-- ===== JS DE LIBRERÍAS (Persona B los añade aquí, ANTES de nuestro JS) ===== -->
+
+    <!-- ===== NUESTRO JAVASCRIPT ===== -->
+    <script src="js/interfaz.js"></script>
+    <script src="js/librerias.js"></script>
+</body>
+
+</html>
