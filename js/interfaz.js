@@ -25,15 +25,24 @@
 
 */
 
+
+/* ========== BOTON MENU DEL NAV PETUNIA ========== */
 const botonMenu = document.getElementById("boton-menu");
 const menu = document.getElementById("menu");
 
-botonMenu.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
+if (botonMenu && menu) {
+    botonMenu.addEventListener("click", () => {
 
-    const abierto = !menu.classList.contains("hidden");
-    botonMenu.setAttribute("aria-expanded", abierto);
-});
+        const abierto = menu.classList.contains("hidden");
+
+        menu.classList.toggle("hidden", !abierto);
+        menu.classList.toggle("flex", abierto);
+
+        botonMenu.setAttribute("aria-expanded", String(abierto));
+        botonMenu.textContent = abierto ? "Cerrar" : "Menú";
+
+    });
+}
 
 
 /* ========== MODO CLARO Y OSCURO PETUNIA ========== */
