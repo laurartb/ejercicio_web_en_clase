@@ -30,18 +30,19 @@
 const botonMenu = document.getElementById("boton-menu");
 const menu = document.getElementById("menu");
 
+
 if (botonMenu && menu) {
+
     botonMenu.addEventListener("click", () => {
 
-        const abierto = menu.classList.contains("hidden");
+        const abierto = menu.classList.toggle("menu-abierto");
 
-        menu.classList.toggle("hidden", !abierto);
-        menu.classList.toggle("flex", abierto);
-
-        botonMenu.setAttribute("aria-expanded", String(abierto));
         botonMenu.textContent = abierto ? "Cerrar" : "Menú";
 
+        botonMenu.setAttribute("aria-expanded", String(abierto));
+
     });
+
 }
 
 
@@ -78,3 +79,6 @@ if (botonTema) {
 
     });
 }
+
+
+
