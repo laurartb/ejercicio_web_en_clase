@@ -100,9 +100,103 @@
         background: #D39E9A;
     }
 
+
+    /* ANIMACIÓN APERTURA Y CIERRE MENÚ EN MÓVIL */
+
+    @media (max-width: 767px) {
+
+        .menu-desplegable {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-12px);
+            pointer-events: none;
+
+            transition:
+                opacity 0.55s ease,
+                transform 0.55s ease,
+                visibility 0.55s;
+        }
+
+        .menu-desplegable.menu-abierto {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .menu-desplegable {
+            transition: none;
+        }
+    }
+
+    /* Animación escalonada de los enlaces del menú móvil */
+
+    @media (max-width: 767px) {
+
+        /* Estado inicial de los enlaces */
+        #menu.menu-desplegable li {
+            opacity: 0;
+            transform: translateY(-10px);
+
+            transition:
+                opacity 0.35s ease,
+                transform 0.35s ease;
+        }
+
+        /* Cuando se abre el menú */
+        #menu.menu-desplegable.menu-abierto li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Cada enlace aparece un poco después */
+        #menu.menu-desplegable.menu-abierto li:nth-child(1) {
+            transition-delay: 0.10s;
+        }
+
+        #menu.menu-desplegable.menu-abierto li:nth-child(2) {
+            transition-delay: 0.18s;
+        }
+
+        #menu.menu-desplegable.menu-abierto li:nth-child(3) {
+            transition-delay: 0.26s;
+        }
+
+        #menu.menu-desplegable.menu-abierto li:nth-child(4) {
+            transition-delay: 0.34s;
+        }
+
+        /* Al cerrar */
+        #menu.menu-desplegable:not(.menu-abierto) li:nth-child(1) {
+            transition-delay: 0.24s;
+        }
+
+        #menu.menu-desplegable:not(.menu-abierto) li:nth-child(2) {
+            transition-delay: 0.16s;
+        }
+
+        #menu.menu-desplegable:not(.menu-abierto) li:nth-child(3) {
+            transition-delay: 0.08s;
+        }
+
+        #menu.menu-desplegable:not(.menu-abierto) li:nth-child(4) {
+            transition-delay: 0s;
+        }
+    }
+
+    /* Accesibilidad: reducir animación si el usuario lo solicita */
+    @media (prefers-reduced-motion: reduce) {
+        #menu.menu-desplegable li {
+            transition: none;
+        }
+    }
+
+
     /* ---------- ENLACES DEL MENÚ ---------- */
 
-    /* Movimiento suave de la flecha de scroll */
+    /* Movimiento flecha scroll */
 
     @keyframes flecha-deslizar {
 
@@ -131,7 +225,7 @@
 
 /* ================= ANIMACIONES ================= */
 
-/* Animación propia de Petunia para elementos decorativos */
+/* Animación elementos decorativos */
 
 @layer components {
 
