@@ -13,7 +13,8 @@
         href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
-    <!-- ===== CSS DE LIBRERÍAS (Persona B los añade aquí) ===== -->
+    <!-- Estilos de la librería AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
     <!-- Nuestro CSS propio -->
     <link rel="stylesheet" href="css/styles.css">
@@ -39,11 +40,13 @@
     </style>
 </head>
 
-<body class="bg-fondo font-texto text-texto antialiased transition-colors duration-500 dark:bg-rosa-oscuro dark:text-crema">
+<body
+    class="bg-fondo font-texto text-texto antialiased transition-colors duration-500 dark:bg-rosa-oscuro dark:text-crema">
 
     <!-- ================= CABECERA ================= -->
     <header class="fixed inset-x-0 top-4 z-50 px-4 md:top-8">
-        <div class="menu-vidrio relative mx-auto flex max-w-5xl flex-row items-center justify-between gap-2 rounded-full px-3 py-2 text-crema md:gap-3 md:px-8 md:py-3">
+        <div
+            class="menu-vidrio relative mx-auto flex max-w-5xl flex-row items-center justify-between gap-2 rounded-full px-3 py-2 text-crema md:gap-3 md:px-8 md:py-3">
             <a href="index.html" class="shrink-0 font-rotulo text-2xl leading-none font-bold md:text-4xl">
                 Petunia
             </a>
@@ -63,7 +66,8 @@
 
             </div>
 
-            <nav aria-label="Navegación principal" class="absolute inset-x-0 top-full mt-3 md:static md:mt-0 md:bg-transparent">
+            <nav aria-label="Navegación principal"
+                class="absolute inset-x-0 top-full mt-3 md:static md:mt-0 md:bg-transparent">
                 <ul id="menu"
                     class="menu-desplegable flex flex-col items-center gap-2 rounded-3xl bg-burdeos/95 px-6 py-5 text-center shadow-xl backdrop-blur-xl dark:bg-granate-oscuro/95 md:flex md:flex-row md:gap-8 md:rounded-none md:bg-transparent md:p-0 md:text-left md:shadow-none md:backdrop-blur-none md:dark:bg-transparent">
                     <li><a href="tienda.html"
@@ -85,11 +89,14 @@
 
     <main>
         <section id="inicio" class="relative h-dvh">
-            <img src="img/tienda.png" alt="Entrada de la floristería Petunia" width="1672" height="941" class="block h-full w-full object-cover object-center">
+            <img src="img/tienda.png" alt="Entrada de la floristería Petunia" width="1672" height="941"
+                class="block h-full w-full object-cover object-center">
         </section>
 
-        <section id="historia" class="relative z-10 -mt-[50dvh] bg-rosa px-5 py-12 text-burdeos md:py-16 dark:bg-rosa-terracota dark:text-crema">
-            <div class="pointer-events-none absolute inset-x-0 bottom-full h-40 bg-gradient-to-b from-transparent to-rosa md:h-52 dark:to-rosa-terracota" aria-hidden="true">
+        <section id="historia"
+            class="relative z-10 -mt-[50dvh] bg-rosa px-5 py-12 text-burdeos md:py-16 dark:bg-rosa-terracota dark:text-crema">
+            <div class="pointer-events-none absolute inset-x-0 bottom-full h-40 bg-gradient-to-b from-transparent to-rosa md:h-52 dark:to-rosa-terracota"
+                aria-hidden="true">
 
             </div>
             <div class="mx-auto max-w-5xl">
@@ -98,8 +105,10 @@
                 </h1>
                 <div class="animar-scroll grid items-start gap-8 md:grid-cols-5 md:gap-12">
                     <div class="space-y-6 md:col-span-2">
-                        <img src="img/manos-abuela.png" alt="Las manos de nuestra abuela envolviendo un ramo de flores" class="aspect-[3/2] w-full object-cover" loading="lazy">
-                        <img src="img/hermanas1.png" alt="Lili y Rosa preparando ramos en la floristería" class="aspect-[3/2] w-full object-cover" loading="lazy">
+                        <img src="img/manos-abuela.png" alt="Las manos de nuestra abuela envolviendo un ramo de flores"
+                            class="aspect-[3/2] w-full object-cover" loading="lazy">
+                        <img src="img/hermanas1.png" alt="Lili y Rosa preparando ramos en la floristería"
+                            class="aspect-[3/2] w-full object-cover" loading="lazy">
                     </div>
                     <div class="md:col-span-3">
                         <h2 class="font-rotulo text-4xl leading-tight md:text-5xl">
@@ -144,8 +153,11 @@
                     recordará siempre.
                 </p>
                 <div class="animar-scroll relative mx-auto mt-10 mb-6 w-4/5 max-w-sm md:mt-14">
-                    <img src="img/rosa.png" alt="Dos manos entregándose una rosa en la floristería" class="aspect-[3/2] w-full object-cover" loading="lazy">
-                    <img src="img/sello.png" alt="" aria-hidden="true" class="absolute -right-4 -bottom-5 w-16 rotate-12 object-contain md:-right-6 md:w-20" loading="lazy">
+                    <img src="img/rosa.png" alt="Dos manos entregándose una rosa en la floristería"
+                        class="aspect-[3/2] w-full object-cover" loading="lazy">
+                    <img src="img/sello.png" alt="" aria-hidden="true"
+                        class="absolute -right-4 -bottom-5 w-16 rotate-12 object-contain md:-right-6 md:w-20"
+                        loading="lazy">
                 </div>
             </div>
         </section>
@@ -171,15 +183,13 @@
         </nav>
     </footer>
 
-    <!-- Librería GSAP -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
-
-    <!-- Plugin ScrollTrigger -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+    <!-- Librería AOS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
     <!-- Nuestro JavaScript -->
     <script src="js/interfaz.js"></script>
     <script src="js/librerias.js"></script>
 
 </body>
+
 </html>

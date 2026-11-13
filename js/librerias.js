@@ -1,74 +1,43 @@
 
 /* ==========================================
-   PETUNIA · GSAP + SCROLLTRIGGER
+   PETUNIA · AOS (ANIMATE ON SCROLL)
+   Animaciones al desplazarse por la web
    ========================================== */
 
-if (typeof gsap !== "undefined" &&
-  typeof ScrollTrigger !== "undefined") {
+if (typeof AOS !== "undefined") {
 
-  gsap.registerPlugin(ScrollTrigger);
-
-  const movimientoReducido = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
-
-  if (!movimientoReducido) {
-
-    // Animaciones individuales
-    gsap.utils.toArray(".animar-scroll").forEach((elemento) => {
-
-      gsap.fromTo(elemento,
-        {
-          autoAlpha: 0,
-          y: 35
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: elemento,
-            start: "top 95%",
-            once: true
-          }
-        }
-      );
-
+    // Animaciones de títulos, fotografías y bloques
+    document.querySelectorAll(".animar-scroll").forEach((elemento) => {
+        elemento.setAttribute("data-aos", "fade-up");
     });
 
-    // Animaciones de tarjetas
+    // Animaciones escalonadas de tarjetas
     document.querySelectorAll(".grupo-animado").forEach((grupo) => {
 
-      const tarjetas = grupo.querySelectorAll(".tarjeta-animada");
+        const tarjetas = grupo.querySelectorAll(".tarjeta-animada");
 
-      if (tarjetas.length === 0) return;
+        tarjetas.forEach((tarjeta, indice) => {
 
-      gsap.fromTo(tarjetas,
-        {
-          autoAlpha: 0,
-          y: 35
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.9,
-          stagger: 0.15,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: grupo,
-            start: "top 90%",
-            once: true
-          }
-        }
-      );
+            tarjeta.setAttribute("data-aos", "fade-up");
+
+            // Retraso progresivo entre las tarjetas
+            const retraso = (indice % 3) * 100;
+
+            tarjeta.setAttribute("data-aos-delay", retraso);
+
+        });
 
     });
 
-    // Actualizar posiciones después de cargar las imágenes
-    window.addEventListener("load", () => {
-      ScrollTrigger.refresh();
+    // Configuración general de AOS
+    AOS.init({
+        duration: 800,
+        easing: "ease-out",
+        offset: 80,
+        once: true,
+        disable: () => window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches
     });
 
-  }
 }
